@@ -26,7 +26,7 @@ function bw_enqueues()
         wp_enqueue_script('slick');
     }
 
-    if ( ! WP_DEBUG) {
+    if (!WP_DEBUG) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery-1.12.4.min.js', array(), null,
             true);
