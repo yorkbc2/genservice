@@ -15,13 +15,37 @@
                     $id = get_the_ID();
                     $social = array();
                     $socials = array(
+                        'vk' => array(
+                            'url' => get_post_meta($id, 'review-vk', true),
+                            'icon' => 'fa-vk',
+                        ),
+                        'youtube' => array(
+                            'url' => get_post_meta($id, 'review-youtube', true),
+                            'icon' => 'fa-youtube',
+                        ),
+                        'twitter' => array(
+                            'url' => get_post_meta($id, 'review-twitter', true),
+                            'icon' => 'fa-twitter',
+                        ),
                         'facebook' => array(
                             'url' => get_post_meta($id, 'review-facebook', true),
                             'icon' => 'fa-facebook-f',
                         ),
-                        'twitter' => array(
+                        'linkedin' => array(
+                            'url' => get_post_meta($id, 'review-linkedin', true),
+                            'icon' => 'fa-linkedin-in',
+                        ),
+                        'instagram' => array(
                             'url' => get_post_meta($id, 'review-instagram', true),
                             'icon' => 'fa-instagram',
+                        ),
+                        'google-plus' => array(
+                            'url' => get_post_meta($id, 'review-google-plus', true),
+                            'icon' => 'fa-google-plus-g',
+                        ),
+                        'odnoklassniki' => array(
+                            'url' => get_post_meta($id, 'review-odnoklassniki', true),
+                            'icon' => 'fa-odnoklassniki',
                         ),
                     );
 
