@@ -9,7 +9,7 @@
     cursor: pointer;
     font-size: 16px;
     border: 1px solid $buttonOutlinedFirstColor;
-    background-color: $buttonOutlinedSecondColor;
+    background-color: transparent;
     box-shadow: none;
     line-height: 1 !important;
 
@@ -33,13 +33,16 @@
     &.button-inverse {
         background: $buttonOutlinedFirstColor;
         color: $buttonOutlinedSecondColor;
-        &:hover, &:active {
+
+        &:hover,
+        &:active {
             color: $buttonOutlinedFirstColor;
-            background: $buttonOutlinedSecondColor;
+            background: transparent;
         }
     }
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         background-color: $buttonOutlinedFirstColor;
         color: $buttonOutlinedSecondColor;
     }

@@ -5301,7 +5301,7 @@ form fieldset {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid #e74c3c;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1 !important;
@@ -5322,7 +5322,7 @@ form fieldset {
     color: #fff; }
     .button-style.button-inverse:hover, .button-style.button-inverse:active {
       color: #e74c3c;
-      background: #fff; }
+      background: transparent; }
   .button-style:hover, .button-style:active {
     background-color: #e74c3c;
     color: #fff; }
@@ -5340,7 +5340,7 @@ a.button {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid #e74c3c;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1 !important;
@@ -5375,7 +5375,7 @@ a.button {
     a.button.button-inverse:hover,
     a.button.button-inverse:active {
       color: #e74c3c;
-      background: #fff; }
+      background: transparent; }
   .button-large:hover, .button-large:active,
   button.button:hover,
   button.button:active,
@@ -5395,7 +5395,7 @@ a.button {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid #e74c3c;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1 !important;
@@ -5418,7 +5418,7 @@ a.button {
     color: #fff; }
     .button-medium.button-inverse:hover, .button-medium.button-inverse:active {
       color: #e74c3c;
-      background: #fff; }
+      background: transparent; }
   .button-medium:hover, .button-medium:active {
     background-color: #e74c3c;
     color: #fff; }
@@ -5434,7 +5434,7 @@ a.button {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid #e74c3c;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1 !important;
@@ -5457,7 +5457,7 @@ a.button {
     color: #fff; }
     .button-small.button-inverse:hover, .button-small.button-inverse:active {
       color: #e74c3c;
-      background: #fff; }
+      background: transparent; }
   .button-small:hover, .button-small:active {
     background-color: #e74c3c;
     color: #fff; }
@@ -5473,7 +5473,7 @@ a.button {
   cursor: pointer;
   font-size: 16px;
   border: 1px solid #e74c3c;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1 !important;
@@ -5495,7 +5495,7 @@ a.button {
     color: #fff; }
     [type="submit"].button-inverse:hover, [type="submit"].button-inverse:active {
       color: #e74c3c;
-      background: #fff; }
+      background: transparent; }
   [type="submit"]:hover, [type="submit"]:active {
     background-color: #e74c3c;
     color: #fff; }
