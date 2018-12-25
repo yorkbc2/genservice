@@ -36,19 +36,18 @@ $menuFontColor: #fff;
 $menuFontColorActive: #fff;
 
 $navArrowColor: #fff;
-$navHeaderMobileBGColor: #232323;
-$navHamburgerMobileColor: $themeColorTwo;
+$navHeaderMobileBGColor: $themeColorTwo;
+$navHamburgerMobileColor: #fff;
 
-// Menu mobile
-$menuMobileBGColor: #333;
-$menuMobileSubMenuBGColor: #444;
+$menuMobileBGColor: $themeColorTwo;
+$menuMobileSubMenuBGColor: lighten($themeColorTwo, 10%);
 $menuMobileLinkFontSize: 16px;
 $menuMobileSubMenuLinkFontSize: 14px;
 $menuMobileTextColor: #fff;
 $menuMobileSubMenuTextColor: $menuMobileTextColor;
-$menuMobileSubMenuBGOnHover: #ccc;
+$menuMobileSubMenuBGOnHover: $themeColorTwo;
+$menuMobileSubMenuTextColorOnHover: #fff;
 
-// MENU END
 $hamburger-offset: 8px;
 $hamburger-duration: .1s;
 $hamburger-delay: .1s;
@@ -57,6 +56,7 @@ $hamburger-color: $themeColorTwo;
 $menu-close-size: 25px;
 $menu-close-color: $themeColorTwo;
 $menuContainerMobilePaddingTop: 30%;
+// MENU END
 
 // FOOTER
 $footerBgColor: $themeColorOne;
