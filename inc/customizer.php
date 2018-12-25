@@ -484,12 +484,13 @@ function bw_customize_register($wp_customize)
     // Section Additional
     $wp_customize->add_section('bw_additional', array(
         'title' => 'Additional',
-        'description' => 'Additional links',
+        //'description' => 'Additional options',
         'panel' => 'bw_theme_options',
     ));
 
     $wp_customize->add_setting('bw_additional_address', array('default' => ''));
     $wp_customize->add_setting('bw_additional_email', array('default' => ''));
+    $wp_customize->add_setting('bw_additional_work_schedule', array('default' => ''));
 
     $wp_customize->add_control('bw_additional_address', array(
         'label' => 'Address',
@@ -498,18 +499,18 @@ function bw_customize_register($wp_customize)
         'type' => 'text',
     ));
 
-    $wp_customize->add_control('bw_social_email', array(
+    $wp_customize->add_control('bw_additional_email', array(
         'label' => 'Email',
         'section' => 'bw_additional',
         'settings' => 'bw_additional_email',
         'type' => 'email',
     ));
 
-    $wp_customize->add_control('bw_additional_skype', array(
-        'label' => 'Skype',
+    $wp_customize->add_control('bw_additional_work_schedule', array(
+        'label' => 'Work Schedule',
         'section' => 'bw_additional',
-        'settings' => 'bw_additional_skype',
-        'type' => 'text',
+        'settings' => 'bw_additional_work_schedule',
+        'type' => 'textarea',
     ));
 
     // Section Messenger

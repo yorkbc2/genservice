@@ -11,17 +11,20 @@ function bw_admin_footer_text()
         __('https://brainworks.com.ua', 'brainworks'),
         __('brainworks.com.ua', 'brainworks')
     );
-    $php_version  = sprintf(
+
+    $php_version = sprintf(
         '%s: <b style="color: #080;">%s</b>',
         __('Running PHP version', 'brainworks'),
         phpversion()
     );
-    $queries      = sprintf(
+
+    $queries = sprintf(
         __('%d request pear %s sec.', 'brainworks'),
         get_num_queries(),
         timer_stop(0, 3)
     );
-    $memory       = sprintf(
+
+    $memory = sprintf(
         __('Spent %d Mb of memory (including unused pages %d Mb)', 'brainworks'),
         round(memory_get_usage() / 1024 / 1024, 2),
         round(memory_get_usage(true) / 1024 / 1024, 2)
@@ -88,31 +91,34 @@ function bw_php_version($content)
 
 //add_filter('update_right_now_text', 'bw_php_version');
 
-if (!function_exists( 'bw_add_img_attributes' )) {
+if (!function_exists('bw_add_img_attributes')) {
     /**
      * Добавление аттрибутов title и alt для картинок
-     * @param  array $attr       Аттрибуты картинки
+     * @param  array $attr Аттрибуты картинки
      * @param  WP_Post|array $attachment Наша картинка
-     * @return array             Аттрибуты картинки
+     * @return array Аттрибуты картинки
      */
-    function bw_add_img_attributes ($attr=array(), $attachment) {
-        $title = trim( strip_tags( $attachment->post_title ) );
-        $alt   = trim( strip_tags( get_post_meta($attachment->ID, '_wp_attachment_image_alt', true) ) );
+    function bw_add_img_attributes($attr = array(), $attachment)
+    {
+        $title = trim(strip_tags($attachment->post_title));
+        $alt = trim(strip_tags(get_post_meta($attachment->ID, '_wp_attachment_image_alt', true)));
 
         $attr['title'] = $title;
         $attr['alt'] = $alt;
 
         return $attr;
-    }   
+    }
 }
 
-add_filter( 'wp_get_attachment_image_attributes', 'bw_add_img_attributes', 10, 3 );
+add_filter('wp_get_attachment_image_attributes', 'bw_add_img_attributes', 10, 3);
 
 /**
  * Admin Enqueue Script
  */
-function bw_admin_enqueue_script() {
-    wp_add_inline_script('postbox', '(function($){$(function(){var customFields=$("#postcustom-hide");if(customFields.length&&customFields.prop("checked")){setTimeout(function(){customFields.trigger("click.postboxes");},100);}});})(jQuery);');
+function bw_admin_enqueue_script()
+{
+    wp_add_inline_script('postbox',
+        '(function($){$(function(){var customFields=$("#postcustom-hide");if(customFields.length&&customFields.prop("checked")){setTimeout(function(){customFields.trigger("click.postboxes");},100);}});})(jQuery);');
 }
 
 add_action('admin_enqueue_scripts', 'bw_admin_enqueue_script');
