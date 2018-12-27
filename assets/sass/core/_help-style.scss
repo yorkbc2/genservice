@@ -81,6 +81,30 @@
     list-style: none;
 }
 
+.is-loading {
+    &::before {
+        content: ' ';
+        display: inline-block;
+        vertical-align: -4px;
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        border-top-color: #363636;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 //xs 544
 @media #{$mobile} {
     .hide-on-mobile {

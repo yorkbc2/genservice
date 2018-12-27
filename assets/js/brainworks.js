@@ -1,6 +1,6 @@
 "use strict";
 
-(function(w, d, $) {
+(function(w, d, $, ajax) {
     $(function() {
         console.info("The site developed by BRAIN WORKS digital agency");
         console.info("Сайт разработан маркетинговым агентством BRAIN WORKS");
@@ -12,13 +12,14 @@
             html.addClass("is-mobile");
         }
         html.removeClass("no-js").addClass("js");
+        scrollToElement();
         reviews(".js-reviews");
         scrollTop(".js-scroll-top");
-        stickFooter(".js-footer", ".js-container");
         wrapHighlightedElements(".highlighted");
+        ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
+        stickFooter(".js-footer", ".js-container");
         anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
         buyOneClick(".one-click", '[data-field-id="field7"]', "h1.page-name");
-        scrollToElement();
         d.on("copy", addLink);
         w.on("resize", function() {
             if (w.innerWidth >= 630) {
@@ -149,4 +150,38 @@
             }
         });
     };
-})(window, document, jQuery);
+    var ajaxLoadMorePosts = function ajaxLoadMorePosts(selector, container) {
+        var btn = $(selector);
+        var storage = $(container);
+        if (!btn.length && !storage.length) return;
+        var data, ajaxStart;
+        data = {
+            action: ajax.action,
+            nonce: ajax.nonce,
+            paged: 1
+        };
+        btn.on("click", function() {
+            if (ajaxStart) return;
+            ajaxStart = true;
+            btn.addClass("is-loading");
+            $.ajax({
+                url: ajax.url,
+                method: "POST",
+                dataType: "json",
+                data: data
+            }).done(function(response) {
+                var posts = response.data;
+                storage.append(response.data);
+                data.paged += 1;
+                ajaxStart = false;
+                btn.removeClass("is-loading");
+                if (posts === "") {
+                    btn.remove();
+                }
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                ajaxStart = false;
+                throw new Error("Handling Ajax request loading posts has caused an ".concat(textStatus, " - ").concat(errorThrown));
+            });
+        });
+    };
+})(window, document, jQuery, window.jpAjax);

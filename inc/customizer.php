@@ -699,7 +699,7 @@ add_action('customize_controls_enqueue_scripts', 'bw_customize_controls_enqueue_
 
 function bw_customizer_css()
 { ?>
-    <style type="text/css">
+    <style>
         .scroll-top {
             width: <?php theme_mod('bw_scroll_top_width', 50); ?>px;
             height: <?php theme_mod('bw_scroll_top_height', 50); ?>px;

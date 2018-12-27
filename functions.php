@@ -3,24 +3,26 @@
  * All the functions are in the PHP pages in the `inc/` folder.
  */
 
-show_admin_bar(false);
+//show_admin_bar(false);
 
-require_once locate_template('/inc/helpers.php');
-require_once locate_template('/inc/auth.php');
-require_once locate_template('/inc/admin.php');
-require_once locate_template('/inc/login.php');
-require_once locate_template('/inc/customizer.php');
+require get_template_directory() . '/inc/helpers.php';
+require get_template_directory() . '/inc/auth.php';
+require get_template_directory() . '/inc/admin.php';
+require get_template_directory() . '/inc/login.php';
+require get_template_directory() . '/inc/customizer.php';
 
-require_once locate_template('/inc/breadcrumbs.php');
-require_once locate_template('/inc/cleanup.php');
-require_once locate_template('/inc/custom-logo.php');
-require_once locate_template('/inc/setup.php');
-require_once locate_template('/inc/enqueues.php');
-require_once locate_template('/inc/navbar.php');
-require_once locate_template('/inc/widgets.php');
-require_once locate_template('/inc/index-pagination.php');
-require_once locate_template('/inc/split-post-pagination.php');
-require_once locate_template('/inc/feedback.php');
-require_once locate_template('/inc/shortcodes.php');
-require_once locate_template('/inc/meta-boxes.php');
-require_once locate_template('/inc/custom-post-types.php');
+require get_template_directory() . '/inc/breadcrumbs.php';
+require get_template_directory() . '/inc/cleanup.php';
+require get_template_directory() . '/inc/custom-logo.php';
+require get_template_directory() . '/inc/setup.php';
+require get_template_directory() . '/inc/enqueues.php';
+require get_template_directory() . '/inc/navbar.php';
+require get_template_directory() . '/inc/widgets.php';
+require get_template_directory() . '/inc/index-pagination.php';
+require get_template_directory() . '/inc/split-post-pagination.php';
+require get_template_directory() . '/inc/feedback.php';
+require get_template_directory() . '/inc/shortcodes.php';
+require get_template_directory() . '/inc/meta-boxes.php';
+require get_template_directory() . '/inc/custom-post-types.php';
+
+require get_template_directory() . '/inc/LoadMorePosts.php';

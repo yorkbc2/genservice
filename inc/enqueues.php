@@ -22,7 +22,7 @@ function bw_enqueues()
     wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'),
         null, true);
 
-    if (is_front_page()) {
+    if (post_type_exists('reviews') && intval(wp_count_posts('reviews')->publish) > 0 && is_front_page()) {
         wp_enqueue_script('slick');
     }
 
@@ -42,6 +42,24 @@ function bw_enqueues()
 }
 
 add_action('wp_enqueue_scripts', 'bw_enqueues', 100);
+
+/**
+ * WP Default Styles
+ *
+ * @param WP_Styles $styles
+ * @return void
+ */
+function bw_wp_default_styles($styles)
+{
+    $editor = get_option('classic-editor-replace');
+
+    if ($editor === 'classic') {
+        //$styles->remove('wp-block-library-theme');
+        $styles->remove('wp-block-library');
+    }
+}
+
+add_action('wp_default_styles', 'bw_wp_default_styles', 11);
 
 function bw_wp_head()
 {

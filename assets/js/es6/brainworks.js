@@ -1,6 +1,6 @@
 'use strict';
 
-((w, d, $) => {
+((w, d, $, ajax) => {
 
     $(() => {
         console.info('The site developed by BRAIN WORKS digital agency');
@@ -17,14 +17,15 @@
 
         html.removeClass('no-js').addClass('js');
 
+        scrollToElement();
         reviews('.js-reviews');
         scrollTop('.js-scroll-top');
-        stickFooter('.js-footer', '.js-container');
         wrapHighlightedElements('.highlighted');
+        ajaxLoadMorePosts('.js-load-more', '.js-ajax-posts');
+        stickFooter('.js-footer', '.js-container');
         // hamburgerMenu('.js-menu', '.js-hamburger', '.js-menu-close');
         anotherHamburgerMenu('.js-menu', '.js-hamburger', '.js-menu-close');
         buyOneClick('.one-click', '[data-field-id="field7"]', 'h1.page-name');
-        scrollToElement();
         // On Copy
         d.on('copy', addLink);
 
@@ -344,4 +345,63 @@
         });
     };
 
-})(window, document, jQuery);
+    /**
+     * Ajax Load More Posts Handler
+     *
+     * @example
+     * ajaxLoadMorePosts('.js-load-more', '.js-ajax-posts');
+     * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     * @param {string} selector - Element for event handler (send ajax)
+     * @param {string} container - The container to which the html markup will be added
+     * @returns {void}
+     */
+    const ajaxLoadMorePosts = (selector, container) => {
+        const btn = $(selector);
+        const storage = $(container);
+
+        if (!btn.length && !storage.length) return;
+
+        let data, ajaxStart;
+
+        data = {
+            'action': ajax.action,
+            'nonce': ajax.nonce,
+            'paged': 1,
+        };
+
+        btn.on('click', () => {
+            if (ajaxStart) return;
+
+            ajaxStart = true;
+
+            btn.addClass('is-loading');
+
+            $.ajax({
+                'url': ajax.url,
+                'method': 'POST',
+                'dataType': 'json',
+                'data': data,
+            })
+                .done((response) => {
+                    const posts = response.data;
+                    storage.append(response.data);
+
+                    data.paged += 1;
+
+                    ajaxStart = false;
+
+                    btn.removeClass('is-loading');
+
+                    if (posts === '') {
+                        btn.remove();
+                    }
+                })
+                .fail((jqXHR, textStatus, errorThrown) => {
+                    ajaxStart = false;
+                    throw new Error(`Handling Ajax request loading posts has caused an ${textStatus} - ${errorThrown}`);
+                });
+
+        });
+    };
+
+})(window, document, jQuery, window.jpAjax);
