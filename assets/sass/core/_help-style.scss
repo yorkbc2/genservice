@@ -81,6 +81,21 @@
     list-style: none;
 }
 
+.brand-color {
+    color: $themeColorTwo;
+}
+
+.highlighted {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: $headerHighlightBgColor;
+
+    &,
+    a {
+        color: $headerHighlightColor;
+    }
+}
+
 .is-loading {
     &::before {
         content: ' ';
@@ -115,4 +130,3 @@
         display: block !important;
     }
 }
-

@@ -39,17 +39,6 @@ i.button-style {
     padding: 3px 8px;
 }
 
-.highlighted {
-    display: inline-block;
-    padding: 5px 15px;
-    background-color: $headerHighlightBgColor;
-
-    &,
-    a {
-        color: $headerHighlightColor;
-    }
-}
-
 @media #{$mobile} {
     p {
         font-size: $p_mobile * $p_size;
