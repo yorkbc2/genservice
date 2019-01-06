@@ -315,7 +315,7 @@ if (!function_exists('bw_advert_shortcode')) {
         $atts = shortcode_atts(
             array(
                 'count' => 3,
-                'class' => 'advert'
+                'class' => 'front-news'
             ),
             $atts
         );
@@ -360,9 +360,13 @@ if (!function_exists('bw_advert_shortcode')) {
                     $basic_class, get_the_permalink(), __('Continue reading', 'brainworks')
                 );
 
-                $item = sprintf('<section id="post-%s" class="%s">%s %s %s %s</section>', get_the_ID(),
+	            $box = sprintf( '<div class="%s-box">%s <div class="%s-inner">%s %s %s</div></div>',
+		            $basic_class, $thumbnail, $basic_class, $headline, $excerpt, $btn
+	            );
+
+                $item = sprintf('<section id="post-%s" class="%s">%s</section>', get_the_ID(),
                     join(' ', get_post_class(array('col-md-4', $basic_class . '-item'))),
-                    $thumbnail, $headline, $excerpt, $btn
+	                $box
                 );
 
                 $items .= $item;
@@ -370,7 +374,7 @@ if (!function_exists('bw_advert_shortcode')) {
 
             wp_reset_postdata();
 
-            $output = sprintf('<div class="container"><div class="row %s-list">%s</div>', $basic_class, $items);
+            $output = sprintf('<div class="row %s-list">%s</div>', $basic_class, $items);
         }
 
         return $output;
