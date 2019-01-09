@@ -28,6 +28,7 @@
                 removeAllStyles($(".js-menu"));
             }
         });
+        $(".menu-link").closeMenuOnClick();
     });
     var stickFooter = function stickFooter(footer, container) {
         var el = $(footer);
@@ -155,11 +156,19 @@
             if (href[0] === "#") {
                 $element.on("click", function(e) {
                     e.preventDefault();
-                    $("html, body").animate({
-                        scrollTop: $(href).offset().top
-                    }, animationSpeed);
+                    var $childElement = $(href);
+                    if ($childElement.length) {
+                        $("html, body").animate({
+                            scrollTop: $(href).offset().top
+                        }, animationSpeed);
+                    }
                 });
             }
+        });
+    };
+    $.fn.closeMenuOnClick = function() {
+        return this.on("click", function() {
+            return $(".js-menu").removeClass("is-active");
         });
     };
     var ajaxLoadMorePosts = function ajaxLoadMorePosts(selector, container) {
