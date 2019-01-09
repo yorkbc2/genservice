@@ -239,7 +239,7 @@
     };
 
     /**
-     * Оборачиваем все Highlighted елементы в блок
+     * Wrap all Highlighted elements in container
      *
      * @param {(string|Object)} elements
      * @returns {void}
