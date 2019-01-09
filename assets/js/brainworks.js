@@ -16,7 +16,9 @@
         reviews(".js-reviews");
         scrollTop(".js-scroll-top");
         wrapHighlightedElements(".highlighted");
-        ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
+        if (ajax) {
+            ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
+        }
         stickFooter(".js-footer", ".js-container");
         anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
         buyOneClick(".one-click", '[data-field-id="field7"]', "h1.page-name");
@@ -40,14 +42,24 @@
                 autoplay: false,
                 autoplaySpeed: 3e3,
                 arrows: true,
-                prevArrow: '<button type="button" class="slick-prev"></button>',
-                nextArrow: '<button type="button" class="slick-next"></button>',
+                prevArrow: '<button type="button" class="slick-prev">&laquo;</button>',
+                nextArrow: '<button type="button" class="slick-next">&raquo;</button>',
                 dots: false,
                 dotsClass: "slick-dots",
                 draggable: true,
                 fade: false,
                 infinite: true,
-                responsive: [],
+                responsive: [ {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                } ],
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 speed: 300,
