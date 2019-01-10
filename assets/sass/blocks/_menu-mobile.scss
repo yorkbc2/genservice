@@ -29,7 +29,7 @@
             right: 10px;
         }
     }
-    
+
     .hamburger {
         display: inline-block;
         position: absolute;
@@ -84,19 +84,31 @@
 
                 .menu-item-has-children-arrow {
                     position: absolute;
+                    top: 5px;
+                    right: 10px;
+                    z-index: 1;
                     display: block;
                     border: 0;
-                    padding: 0;
-                    border-right: 2px solid $navArrowColor;
-                    border-bottom: 2px solid $navArrowColor;
-                    transform: rotate(45deg);
+                    padding: 11px 13px 15px;
                     background-color: transparent;
-                    width: 10px;
-                    height: 10px;
-                    top: 12px;
-                    right: 15px;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        border-right: 2px solid $navArrowColor;
+                        border-bottom: 2px solid $navArrowColor;
+                        transform: rotate(45deg);
+                    }
+
                     &-active {
-                        transform: rotate(45deg) scale(-1);
+                        padding-top: 15px;
+                        padding-bottom: 11px;
+
+                        &::before {
+                            transform: rotate(-135deg);
+                        }
                     }
                 }
 
@@ -129,6 +141,7 @@
                 &::after {
                     display: none;
                 }
+
                 .menu-item-has-children-arrow {
                     top: 12px;
                 }
