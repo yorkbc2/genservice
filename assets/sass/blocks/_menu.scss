@@ -5,9 +5,13 @@
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
     border-radius: 4px;
     text-align: center;
+
     .menu {
-        @extend %reset-list;
-        font-size: 0;
+        &,
+        &-container {
+            @extend %reset-list;
+            font-size: 0;
+        }
 
         &-item {
             display: inline-block;
@@ -125,6 +129,7 @@
             .menu-item-has-children-arrow {
                 display: none;
             }
+
             &-has-children {
                 position: relative;
                 
