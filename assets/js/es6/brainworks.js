@@ -36,6 +36,8 @@
                 removeAllStyles($('.js-menu'));
             }
         });
+
+        $(".menu-link").closeMenuOnClick();
     });
 
     /**
@@ -237,7 +239,7 @@
     };
 
     /**
-     * Оборачиваем все Highlighted елементы в блок
+     * Wrap all Highlighted elements in container
      *
      * @param {(string|Object)} elements
      * @returns {void}
@@ -351,13 +353,25 @@
             if (href[0] === '#') {
                 $element.on('click', (e) => {
                     e.preventDefault();
-
-                    $('html, body').animate({
-                        scrollTop: $(href).offset().top
-                    }, animationSpeed);
+                    let $childElement = $(href);
+                    if ($childElement.length) {
+                        $('html, body').animate({
+                            scrollTop: $(href).offset().top
+                        }, animationSpeed);
+                    }
                 });
             }
         });
+    };
+
+    /**
+     * Close menu when link is clicked
+     * @example
+     * $("selector").closeMenuOnClick();
+     * @returns {Object} 
+     */
+    $.fn.closeMenuOnClick = function () {
+        return this.on("click", () => $(".js-menu").removeClass("is-active"));
     };
 
     /**

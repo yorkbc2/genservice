@@ -490,3 +490,19 @@ if (!function_exists('sanitize_background_setting')) {
         return $value;
     }
 }
+
+if (!function_exists("the_auth_button")) {
+    /**
+     * @param $login_page_url Url to auth page
+     * @return void
+     */
+    function the_auth_button ($login_page_url = "/auth") {
+        $link = $login_page_url;
+        $text = __("Login", "brainworks");
+        if (get_auth_session()) {
+            $link = "/wp-json/api/auth/logout";
+            $text = __("Logout", "brainworks");
+        }
+        echo sprintf('<a href="%s" class="button-medium">%s</a>', $link, $text);
+    }
+}
