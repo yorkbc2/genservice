@@ -28,7 +28,6 @@
                 removeAllStyles($(".js-menu"));
             }
         });
-        $(".menu-link").closeMenuOnClick();
     });
     var stickFooter = function stickFooter(footer, container) {
         var el = $(footer);
@@ -77,6 +76,9 @@
         };
         Elements.button.add(Elements.close).on("click", function() {
             Elements.menu.toggleClass("is-active");
+        });
+        Elements.menu.find("a").on("click", function() {
+            Elements.menu.removeClass("is-active");
         });
         var arrowOpener = function arrowOpener(parent) {
             var activeArrowClass = "menu-item-has-children-arrow-active";
@@ -156,19 +158,14 @@
             if (href[0] === "#") {
                 $element.on("click", function(e) {
                     e.preventDefault();
-                    var $childElement = $(href);
-                    if ($childElement.length) {
+                    var el = $(href);
+                    if (el.length) {
                         $("html, body").animate({
                             scrollTop: $(href).offset().top
                         }, animationSpeed);
                     }
                 });
             }
-        });
-    };
-    $.fn.closeMenuOnClick = function() {
-        return this.on("click", function() {
-            return $(".js-menu").removeClass("is-active");
         });
     };
     var ajaxLoadMorePosts = function ajaxLoadMorePosts(selector, container) {

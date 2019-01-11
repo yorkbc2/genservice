@@ -21,7 +21,7 @@
         reviews('.js-reviews');
         scrollTop('.js-scroll-top');
         wrapHighlightedElements('.highlighted');
-        if(ajax) {
+        if (ajax) {
             ajaxLoadMorePosts('.js-load-more', '.js-ajax-posts');
         }
         stickFooter('.js-footer', '.js-container');
@@ -36,8 +36,6 @@
                 removeAllStyles($('.js-menu'));
             }
         });
-
-        $(".menu-link").closeMenuOnClick();
     });
 
     /**
@@ -45,6 +43,7 @@
      *
      * @example
      * stickFooter('.js-footer', '.js-wrapper');
+     *
      * @author Fedor Kudinov <brothersrabbits@mail.ru>
      *
      * @param {(string|Object)} footer - footer element
@@ -63,7 +62,9 @@
      *
      * @example
      * reviews('.js-reviews');
+     *
      * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     *
      * @param {(string|Object)} container - reviews container
      * @returns {void}
      */
@@ -123,7 +124,9 @@
      *
      * @example
      * hamburgerMenu('.js-menu', '.js-hamburger', '.js-menu-close');
+     *
      * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     *
      * @param {(string|Object)} menuElement - Selected menu
      * @param {(string|Object)} hamburgerElement - Trigger element for open/close menu
      * @param {(string|Object)} closeTrigger - Trigger element for close opened menu
@@ -153,9 +156,9 @@
     };*/
 
     /**
-     * Скролл к элементу
+     * Scroll to element
      *
-     * @param {(string|Object)} elements Элементы, которым добавляем Handler
+     * @param {(string|Object)} elements Elements to add to handler
      * @returns {void}
      */
     /*const scrollHandlerForButton = (elements) => {
@@ -183,9 +186,9 @@
     /**
      * Another Hamburger Menu
      *
-     * @param {string} menuElement
-     * @param {string} hamburgerElement
-     * @param {string} closeTrigger
+     * @param {string} menuElement Selector or element
+     * @param {string} hamburgerElement Selector or element
+     * @param {string} closeTrigger Also selector or element
      * @returns {void}
      */
     const anotherHamburgerMenu = (menuElement, hamburgerElement, closeTrigger) => {
@@ -199,11 +202,15 @@
             Elements.menu.toggleClass('is-active');
         });
 
+        Elements.menu.find('a').on('click', () => {
+            Elements.menu.removeClass('is-active');
+        });
+
         /**
          * Arrow Opener
          *
-         * @param {Object} parent
-         * @returns {*}
+         * @param {Object} parent Selector or element
+         * @returns {(Object)} jQuery element
          */
         const arrowOpener = function (parent) {
             const activeArrowClass = 'menu-item-has-children-arrow-active';
@@ -229,9 +236,9 @@
     };
 
     /**
-     *  Remove All Styles from sub menu element
+     * Remove All Styles from sub menu element
      *
-     * @param {Object} elementParent
+     * @param {Object} elementParent selector or element
      * @returns {void}
      */
     const removeAllStyles = (elementParent) => {
@@ -239,9 +246,9 @@
     };
 
     /**
-     * Wrap all Highlighted elements in container
+     * Wrap all highlighted elements in container
      *
-     * @param {(string|Object)} elements
+     * @param {(string|Object)} elements selector or elements
      * @returns {void}
      */
     const wrapHighlightedElements = (elements) => {
@@ -261,7 +268,9 @@
      *
      * @example
      * buyOneClick('.one-click', '[data-field-id="field7"]', 'h1.page-name');
+     *
      * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     *
      * @param {(string|Object)} button - The selected button when clicking on which the form of purchase pops up
      * @param {(string|Object)} field - The selected field for writing the value (disabled field)
      * @param {(string|Object)} headline - The element from which we get the value to write to the field
@@ -282,7 +291,9 @@
      *
      * @example
      * scrollTop('.js-scroll-top');
+     *
      * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     *
      * @param {(string|Object)} element - Selected element
      * @returns {void}
      */
@@ -314,7 +325,9 @@
      *
      * @example
      * document.oncopy = addLink; or $(document).on('copy', addLink);
+     *
      * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     *
      * @returns {void}
      */
     const addLink = () => {
@@ -341,7 +354,7 @@
     /**
      * Function to add scroll handler for all links with hash as first symbol of href
      *
-     * @param {number} [animationSpeed=400]
+     * @param {number} [animationSpeed=400] speed of animation
      * @returns {void}
      */
     const scrollToElement = (animationSpeed = 400) => {
@@ -353,8 +366,10 @@
             if (href[0] === '#') {
                 $element.on('click', (e) => {
                     e.preventDefault();
-                    let $childElement = $(href);
-                    if ($childElement.length) {
+
+                    const el = $(href);
+
+                    if (el.length) {
                         $('html, body').animate({
                             scrollTop: $(href).offset().top
                         }, animationSpeed);
@@ -362,16 +377,6 @@
                 });
             }
         });
-    };
-
-    /**
-     * Close menu when link is clicked
-     * @example
-     * $("selector").closeMenuOnClick();
-     * @returns {Object} 
-     */
-    $.fn.closeMenuOnClick = function () {
-        return this.on("click", () => $(".js-menu").removeClass("is-active"));
     };
 
     /**
