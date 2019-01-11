@@ -77,6 +77,9 @@
         Elements.button.add(Elements.close).on("click", function() {
             Elements.menu.toggleClass("is-active");
         });
+        Elements.menu.find("a").on("click", function() {
+            Elements.menu.removeClass("is-active");
+        });
         var arrowOpener = function arrowOpener(parent) {
             var activeArrowClass = "menu-item-has-children-arrow-active";
             return $("<button />").addClass("menu-item-has-children-arrow").on("click", function() {
@@ -155,9 +158,12 @@
             if (href[0] === "#") {
                 $element.on("click", function(e) {
                     e.preventDefault();
-                    $("html, body").animate({
-                        scrollTop: $(href).offset().top
-                    }, animationSpeed);
+                    var $el = $(href);
+                    if ($el.length) {
+                        $("html, body").animate({
+                            scrollTop: $(href).offset().top
+                        }, animationSpeed);
+                    }
                 });
             }
         });

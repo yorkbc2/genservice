@@ -21,7 +21,7 @@
         reviews('.js-reviews');
         scrollTop('.js-scroll-top');
         wrapHighlightedElements('.highlighted');
-        if(ajax) {
+        if (ajax) {
             ajaxLoadMorePosts('.js-load-more', '.js-ajax-posts');
         }
         stickFooter('.js-footer', '.js-container');
@@ -151,9 +151,9 @@
     };*/
 
     /**
-     * Скролл к элементу
+     * Scroll to element
      *
-     * @param {(string|Object)} elements Элементы, которым добавляем Handler
+     * @param {(string|Object)} elements Elements to add to handler
      * @returns {void}
      */
     /*const scrollHandlerForButton = (elements) => {
@@ -181,9 +181,9 @@
     /**
      * Another Hamburger Menu
      *
-     * @param {string} menuElement
-     * @param {string} hamburgerElement
-     * @param {string} closeTrigger
+     * @param {string} menuElement Selector or element
+     * @param {string} hamburgerElement Selector or element
+     * @param {string} closeTrigger Also selector or element
      * @returns {void}
      */
     const anotherHamburgerMenu = (menuElement, hamburgerElement, closeTrigger) => {
@@ -197,11 +197,14 @@
             Elements.menu.toggleClass('is-active');
         });
 
+        Elements.menu.find("a").on("click", () => {
+            Elements.menu.removeClass('is-active');
+        });
+
         /**
          * Arrow Opener
-         *
-         * @param {Object} parent
-         * @returns {*}
+         * @param {Object} parent Selector or element
+         * @returns {(Object)} jQuery element
          */
         const arrowOpener = function (parent) {
             const activeArrowClass = 'menu-item-has-children-arrow-active';
@@ -229,7 +232,7 @@
     /**
      *  Remove All Styles from sub menu element
      *
-     * @param {Object} elementParent
+     * @param {Object} elementParent selector or element
      * @returns {void}
      */
     const removeAllStyles = (elementParent) => {
@@ -237,9 +240,9 @@
     };
 
     /**
-     * Оборачиваем все Highlighted елементы в блок
+     * Wrap all highlighted elements in container
      *
-     * @param {(string|Object)} elements
+     * @param {(string|Object)} elements selector or elements
      * @returns {void}
      */
     const wrapHighlightedElements = (elements) => {
@@ -288,7 +291,7 @@
         const el = $(element);
 
         el.on('click touchend', () => {
-            $('html, body').animate({scrollTop: 0}, 'slow');
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
             return false;
         });
 
@@ -334,12 +337,12 @@
             body.removeChild(div);
         }, 0);
     };
-
-
+ 
+ 
     /**
      * Function to add scroll handler for all links with hash as first symbol of href
      *
-     * @param {number} [animationSpeed=400]
+     * @param {number} [animationSpeed=400] speed of animation
      * @returns {void}
      */
     const scrollToElement = (animationSpeed = 400) => {
@@ -351,10 +354,12 @@
             if (href[0] === '#') {
                 $element.on('click', (e) => {
                     e.preventDefault();
-
-                    $('html, body').animate({
-                        scrollTop: $(href).offset().top
-                    }, animationSpeed);
+                    let $el = $(href);
+                    if ($el.length) {
+                        $('html, body').animate({
+                            scrollTop: $(href).offset().top
+                        }, animationSpeed);
+                    }
                 });
             }
         });
