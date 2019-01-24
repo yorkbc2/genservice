@@ -3,7 +3,7 @@
 <div class="sp-xs-2 sp-md-3"></div>
 
 <div class="row">
-    <div class="col-xs-12 col-md-9">
+    <div class="col-xs-12 col-md-8">
         <h1 class="text-center"><?php post_type_archive_title(); ?></h1>
 
         <div class="sp-xs-2 sp-md-3"></div>
@@ -84,7 +84,7 @@
             get_template_part('loops/content', 'none');
         } ?>
     </div>
-    <div class="col-xs-12 col-md-3"><?php get_sidebar(); ?></div>
+    <div class="col-xs-12 col-md-4"><?php dynamic_sidebar('sidebar-widget-area2'); ?></div>
 </div>
 
 <?php get_footer(); ?>
