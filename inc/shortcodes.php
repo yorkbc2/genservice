@@ -69,14 +69,21 @@ if (!function_exists('bw_social_shortcode')) {
         if (has_social()) {
             $items = '';
 
-            foreach (get_social() as $social) {
+            foreach (get_social() as $name => $social) {
+                $icon_fallback = sprintf(
+                    '<i class="%s" aria-hidden="true" aria-label="%s"></i>',
+                    esc_attr($social['icon']), esc_attr($social['text'])
+                );
+
+                $icon = !empty($social['icon-html']) ? strip_tags($social['icon-html'], '<i>') : $icon_fallback;
+
                 $items .= sprintf(
                     '<li class="social-item">%s</li>',
                     sprintf(
-                        '<a class="social-link" href="%s" target="_blank"><i class="%s" aria-hidden="true" aria-label="%s"></i></a>',
+                        '<a class="social-link social-%s" href="%s" target="_blank">%s</a>',
+                        esc_attr($name),
                         esc_attr(esc_url($social['url'])),
-                        esc_attr($social['icon']),
-                        esc_attr($social['text'])
+                        $icon
                     )
                 );
             }

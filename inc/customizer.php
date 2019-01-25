@@ -572,12 +572,37 @@ function bw_customize_register($wp_customize)
     $wp_customize->add_setting('bw_social_google_plus', array('default' => ''));
     $wp_customize->add_setting('bw_social_youtube', array('default' => ''));
     $wp_customize->add_setting('bw_social_odnoklassniki', array('default' => ''));
+    $wp_customize->add_setting('bw_social_custom_one', array('default' => ''));
+    $wp_customize->add_setting('bw_social_custom_two', array('default' => ''));
+    $wp_customize->add_setting('bw_social_custom_three', array('default' => ''));
+
+    $wp_customize->add_setting('bw_social_vk_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_twitter_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_facebook_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_linkedin_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_instagram_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_google_plus_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_youtube_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_odnoklassniki_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_custom_one_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_custom_two_icon', array('default' => ''));
+    $wp_customize->add_setting('bw_social_custom_three_icon', array('default' => ''));
 
     $wp_customize->add_control('bw_social_vk', array(
         'label' => __('Vk', 'brainworks'),
         'section' => 'bw_social',
         'settings' => 'bw_social_vk',
         'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_vk_icon', array(
+        'label' => 'Vk Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_vk_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-vk"></i>',
+        ),
     ));
 
     $wp_customize->add_control('bw_social_twitter', array(
@@ -587,11 +612,31 @@ function bw_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_control('bw_social_twitter_icon', array(
+        'label' => 'Twitter Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_twitter_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-twitter"></i>',
+        ),
+    ));
+
     $wp_customize->add_control('bw_social_facebook', array(
         'label' => __('Facebook', 'brainworks'),
         'section' => 'bw_social',
         'settings' => 'bw_social_facebook',
         'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_facebook_icon', array(
+        'label' => 'Facebook Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_facebook_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-facebook-f"></i>',
+        ),
     ));
 
     $wp_customize->add_control('bw_social_linkedin', array(
@@ -601,11 +646,31 @@ function bw_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_control('bw_social_linkedin_icon', array(
+        'label' => 'Linkedin Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_linkedin_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-linkedin-in"></i>',
+        ),
+    ));
+
     $wp_customize->add_control('bw_social_instagram', array(
         'label' => __('Instagram', 'brainworks'),
         'section' => 'bw_social',
         'settings' => 'bw_social_instagram',
         'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_instagram_icon', array(
+        'label' => 'Instagram Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_instagram_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-instagram"></i>',
+        ),
     ));
 
     $wp_customize->add_control('bw_social_google_plus', array(
@@ -615,6 +680,16 @@ function bw_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_control('bw_social_google_plus_icon', array(
+        'label' => 'Google Plus Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_google_plus_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-google-plus-g"></i>',
+        ),
+    ));
+
     $wp_customize->add_control('bw_social_youtube', array(
         'label' => __('YouTube', 'brainworks'),
         'section' => 'bw_social',
@@ -622,11 +697,82 @@ function bw_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_control('bw_social_youtube_icon', array(
+        'label' => 'YouTube Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_youtube_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-youtube"></i>',
+        ),
+    ));
+
     $wp_customize->add_control('bw_social_odnoklassniki', array(
         'label' => __('Odnoklassniki', 'brainworks'),
         'section' => 'bw_social',
         'settings' => 'bw_social_odnoklassniki',
         'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_odnoklassniki_icon', array(
+        'label' => 'Odnoklassniki Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_odnoklassniki_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fab fa-odnoklassniki"></i>',
+        ),
+    ));
+
+    $wp_customize->add_control('bw_social_custom_one', array(
+        'label' => 'Custom social',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_custom_one',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_custom_one_icon', array(
+        'label' => 'Custom Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_custom_one_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fa fa-icon"></i>',
+        ),
+    ));
+
+    $wp_customize->add_control('bw_social_custom_two', array(
+        'label' => 'Custom social',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_custom_two',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_custom_two_icon', array(
+        'label' => 'Custom Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_custom_two_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fa fa-icon"></i>',
+        ),
+    ));
+
+    $wp_customize->add_control('bw_social_custom_three', array(
+        'label' => 'Custom social',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_custom_three',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_control('bw_social_custom_three_icon', array(
+        'label' => 'Custom Icon',
+        'section' => 'bw_social',
+        'settings' => 'bw_social_custom_three_icon',
+        'type' => 'text',
+        'input_attrs' => array(
+            'placeholder' => '<i class="fa fa-icon"></i>',
+        ),
     ));
 
     // Section Phones

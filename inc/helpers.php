@@ -226,41 +226,67 @@ if (!function_exists('get_social')) {
                 'url' => get_theme_mod('bw_social_vk'),
                 'text' => 'Vk',
                 'icon' => 'fab fa-vk',
+                'icon-html' => get_theme_mod('bw_social_vk_icon'),
             ],
             'twitter' => [
                 'url' => get_theme_mod('bw_social_twitter'),
                 'text' => 'Twitter',
                 'icon' => 'fab fa-twitter',
+                'icon-html' => get_theme_mod('bw_social_twitter_icon'),
             ],
             'facebook' => [
                 'url' => get_theme_mod('bw_social_facebook'),
                 'text' => 'Facebook',
                 'icon' => 'fab fa-facebook-f',
+                'icon-html' => get_theme_mod('bw_social_facebook_icon'),
             ],
             'linkedin' => [
                 'url' => get_theme_mod('bw_social_linkedin'),
                 'text' => 'Linkedin',
                 'icon' => 'fab fa-linkedin-in',
+                'icon-html' => get_theme_mod('bw_social_linkedin_icon'),
             ],
             'instagram' => [
                 'url' => get_theme_mod('bw_social_instagram'),
                 'text' => 'Instagram',
                 'icon' => 'fab fa-instagram',
+                'icon-html' => get_theme_mod('bw_social_instagram_icon'),
             ],
             'google-plus' => [
                 'url' => get_theme_mod('bw_social_google_plus'),
                 'text' => 'Google Plus',
                 'icon' => 'fab fa-google-plus-g',
+                'icon-html' => get_theme_mod('bw_social_google_plus_icon'),
             ],
             'youtube' => [
                 'url' => get_theme_mod('bw_social_youtube'),
                 'text' => 'YouTube',
                 'icon' => 'fab fa-youtube',
+                'icon-html' => get_theme_mod('bw_social_youtube_icon'),
             ],
             'odnoklassniki' => [
                 'url' => get_theme_mod('bw_social_odnoklassniki'),
                 'text' => 'Odnoklassniki',
                 'icon' => 'fab fa-odnoklassniki',
+                'icon-html' => get_theme_mod('bw_social_odnoklassniki_icon'),
+            ],
+            'custom-one' => [
+                'url' => get_theme_mod('bw_social_custom_one'),
+                'text' => '',
+                'icon' => 'far fa-question-circle',
+                'icon-html' => get_theme_mod('bw_social_custom_one_icon'),
+            ],
+            'custom-two' => [
+                'url' => get_theme_mod('bw_social_custom_two'),
+                'text' => '',
+                'icon' => 'far fa-question-circle',
+                'icon-html' => get_theme_mod('bw_social_custom_two_icon'),
+            ],
+            'custom-three' => [
+                'url' => get_theme_mod('bw_social_custom_three'),
+                'text' => '',
+                'icon' => 'far fa-question-circle',
+                'icon-html' => get_theme_mod('bw_social_custom_three_icon'),
             ],
         ];
 
