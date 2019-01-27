@@ -14,7 +14,7 @@
     <div class="copyright">
         <p class="container">
             <?php _e('Developed by', 'brainworks') ?>
-            <a href="https://brainworks.com.ua/" target="_blank">BRAIN WORKS</a>
+            <a href="https://brainworks.pro/" target="_blank">BRAIN WORKS</a>
             &copy; <?php echo date('Y'); ?>
         </p>
     </div>
