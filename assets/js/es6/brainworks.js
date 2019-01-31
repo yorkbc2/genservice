@@ -18,6 +18,7 @@
         html.removeClass('no-js').addClass('js');
 
         scrollToElement();
+        sidebarAccordion();
         reviews('.js-reviews');
         scrollTop('.js-scroll-top');
         wrapHighlightedElements('.highlighted');
@@ -375,6 +376,41 @@
                         }, animationSpeed);
                     }
                 });
+            }
+        });
+    };
+
+    /**
+     * Sidebar Accordion
+     *
+     * @example
+     * sidebarAccordion();
+     *
+     * @author Fedor Kudinov <brothersrabbits@mail.ru>
+     *
+     * @returns {void}
+     */
+    const sidebarAccordion = () => {
+        const sidebarMenu = $('.sidebar .widget_nav_menu');
+        const items = sidebarMenu.find('li');
+        const subMenu = items.find('.sub-menu');
+
+        if (subMenu.length) {
+            subMenu.each(function (index, value) {
+                $(value).parent().first().append('<i class="trigger"></i>');
+            });
+        }
+
+        const classAction = 'is-opened';
+        const trigger = items.find('.trigger');
+
+        trigger.on('click', function () {
+            const el = $(this), parent = el.parent();
+
+            if (parent.hasClass(classAction)) {
+                parent.removeClass(classAction);
+            } else {
+                parent.addClass(classAction);
             }
         });
     };

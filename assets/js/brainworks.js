@@ -13,6 +13,7 @@
         }
         html.removeClass("no-js").addClass("js");
         scrollToElement();
+        sidebarAccordion();
         reviews(".js-reviews");
         scrollTop(".js-scroll-top");
         wrapHighlightedElements(".highlighted");
@@ -165,6 +166,26 @@
                         }, animationSpeed);
                     }
                 });
+            }
+        });
+    };
+    var sidebarAccordion = function sidebarAccordion() {
+        var sidebarMenu = $(".sidebar .widget_nav_menu");
+        var items = sidebarMenu.find("li");
+        var subMenu = items.find(".sub-menu");
+        if (subMenu.length) {
+            subMenu.each(function(index, value) {
+                $(value).parent().first().append('<i class="trigger"></i>');
+            });
+        }
+        var classAction = "is-opened";
+        var trigger = items.find(".trigger");
+        trigger.on("click", function() {
+            var el = $(this), parent = el.parent();
+            if (parent.hasClass(classAction)) {
+                parent.removeClass(classAction);
+            } else {
+                parent.addClass(classAction);
             }
         });
     };

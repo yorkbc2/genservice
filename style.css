@@ -271,6 +271,9 @@ a img.aligncenter {
   display: block !important;
   margin: 0 auto; }
 
+em {
+  font-style: italic; }
+
 .text-muted {
   color: #aaa; }
 
@@ -343,6 +346,9 @@ a img.aligncenter {
   border-top-color: #363636;
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite; }
+
+.is-hide {
+  display: none; }
 
 @-webkit-keyframes spin {
   0% {
@@ -8199,8 +8205,37 @@ a:hover .fa {
     text-decoration: none; }
   .sidebar .widget_nav_menu li:hover a {
     text-decoration: none; }
+  .sidebar .widget_nav_menu .trigger {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ed7669;
+    border-radius: 50%; }
+    .sidebar .widget_nav_menu .trigger::before, .sidebar .widget_nav_menu .trigger::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: #ed7669; }
+    .sidebar .widget_nav_menu .trigger::before {
+      width: 10px;
+      height: 2px; }
+    .sidebar .widget_nav_menu .trigger::after {
+      width: 2px;
+      height: 10px; }
   .sidebar .widget_nav_menu .menu {
     list-style: none; }
+    .sidebar .widget_nav_menu .menu .menu-item-has-children {
+      position: relative; }
+      .sidebar .widget_nav_menu .menu .menu-item-has-children .sub-menu {
+        display: none; }
     .sidebar .widget_nav_menu .menu .menu-item a, .sidebar .widget_nav_menu .menu .menu-item span {
       margin-bottom: 4px;
       display: block;
@@ -8208,6 +8243,10 @@ a:hover .fa {
       padding-bottom: 4px;
       font-size: 14px;
       text-decoration: none; }
+    .sidebar .widget_nav_menu .menu li.is-opened > .sub-menu {
+      display: block; }
+    .sidebar .widget_nav_menu .menu li.is-opened > .trigger::after {
+      content: none; }
     .sidebar .widget_nav_menu .menu .sub-menu {
       padding-left: 15px;
       list-style: none; }
@@ -8221,6 +8260,7 @@ a:hover .fa {
         margin-left: 5px;
         font-size: 10px; }
       .sidebar .widget_nav_menu .menu .sub-menu .sub-menu-item-has-children {
+        position: relative;
         border: none; }
 
 .widget-item {
@@ -8335,6 +8375,3 @@ img {
   @media (min-width: 545px) and (max-width: 768px) {
     .page-404 {
       background: none; } }
-
-.is-hide {
-  display: none; }
