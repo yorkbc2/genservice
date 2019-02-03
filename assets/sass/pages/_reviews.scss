@@ -147,17 +147,17 @@ $review-next: '\00bb'; // &raquo;
             &-prev {
                 left: 0;
 
-                &::before {
-                    content: $review-prev;
-                }
+                //&::before {
+                //    content: $review-prev;
+                //}
             }
 
             &-next {
                 right: 0;
 
-                &::before {
-                    content: $review-next;
-                }
+                //&::before {
+                //    content: $review-next;
+                //}
             }
         }
     }
