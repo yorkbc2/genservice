@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: brainworks-v4.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 11:57+0000\n"
-"PO-Revision-Date: 2018-03-23 12:05+0000\n"
-"Last-Translator: Kudinov Fedor <brothersrabbits@mail.ru>\n"
+"POT-Creation-Date: 2019-02-03 11:25+0000\n"
+"PO-Revision-Date: 2019-02-03 11:27+0000\n"
+"Last-Translator: YegorMamay <yegor19.05@gmail.com>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
@@ -13,6 +13,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/"
+
+#. Name of the template
+msgid "Sidebar Left"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search"
+msgstr "Пошук"
+
+#. Name of the template
+msgid "Only Logged In"
+msgstr ""
+
+#: page-auth-only.php:12
+msgid "You must be logged in to see this page!"
+msgstr ""
+
+#. Name of the template
+msgid "Sidebar Right"
+msgstr ""
+
+#: search.php:4
+msgid "Search Results for"
+msgstr "Результат пошуку для"
+
+#. Name of the template
+msgid "Sitemap Page"
+msgstr ""
+
+#. Name of the template
+msgid "Home Page"
+msgstr "Головна сторінка"
 
 #: 404.php:7
 msgid "Error"
@@ -30,11 +62,26 @@ msgstr "Повернутися на головну"
 msgid "Or use search"
 msgstr "Або скористайтеся пошуком"
 
-#: category.php:6 loops/content-blog-1-sbl.php:24
-#: loops/content-blog-1-sbr.php:21 loops/content-blog-2.php:20
-#: loops/content-blog-3.php:21
+#. Name of the template
+msgid "Page Without Breadcrumbs"
+msgstr ""
+
+#: category.php:5 loops/content-blog-1-sbr.php:26 loops/content-blog-2.php:25
+#: loops/content-blog-1-sbl.php:29 loops/content-blog-3.php:26
 msgid "Category"
 msgstr "Категорія"
+
+#. Name of the template
+msgid "Landing"
+msgstr ""
+
+#: tag.php:5
+msgid "Tag"
+msgstr ""
+
+#. Name of the template
+msgid "Thank You Page"
+msgstr ""
 
 #: footer.php:16
 msgid "Developed by"
@@ -52,500 +99,548 @@ msgstr ""
 msgid "Edit Login Logo"
 msgstr ""
 
-#: functions.php:25
+#. Name of the template
+msgid "Page Without Title"
+msgstr ""
+
+#: loops/content-blog-1-sbr.php:12 loops/content-blog-2.php:11
+#: loops/content-blog-1-sbl.php:15 loops/content-blog-3.php:12
+msgid "By"
+msgstr "Автор"
+
+#: loops/content-blog-1-sbr.php:28 loops/content-blog-2.php:27
+#: loops/content-blog-1-sbl.php:31 loops/content-blog-3.php:28
+#: loops/comments.php:20
+msgid "Comments"
+msgstr "Коментарі"
+
+#: loops/content-blog-1-sbr.php:29 loops/content-blog-2.php:28
+#: loops/content-blog-1-sbl.php:32 loops/content-blog-3.php:29
+#: loops/comments.php:21
+msgid "None"
+msgstr "Нет"
+
+#: loops/content-blog-1-sbr.php:45 loops/content-blog-2.php:41
+#: loops/content-blog-1-sbl.php:45 loops/content-2.php:56
+#: loops/content-blog-3.php:42 loops/content.php:53
+msgid "Previous"
+msgstr "Попередній"
+
+#: loops/content-blog-1-sbr.php:46 loops/content-blog-2.php:42
+#: loops/content-blog-1-sbl.php:46 loops/content-2.php:57
+#: loops/content-blog-3.php:43 loops/content.php:54
+msgid "Next"
+msgstr "Наступний"
+
+#: loops/content-2.php:36 inc/LoadMorePosts.php:107 inc/shortcodes.php:367
+msgid "Continue reading"
+msgstr "Читати далі"
+
+#: loops/content-search.php:21
+msgid "Sorry, your search yielded no results."
+msgstr "Ваш пошук не дав результату."
+
+#: loops/content.php:31
+msgid " <i class=\"glyphicon glyphicon-arrow-right\"></i>"
+msgstr ""
+
+#: loops/comments.php:9
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Цей запис захищен. Введіть пароль, щоб побачити коментарі."
+
+#: loops/comments.php:18
+msgid "Feedback"
+msgstr "Відгук"
+
+#: loops/comments.php:56
+msgid "Logged in as"
+msgstr "Ви увійшли як"
+
+#: loops/comments.php:58
+msgid "Log out of this account"
+msgstr "Вийти з цього акаунту"
+
+#: loops/comments.php:58
+msgid "Log out"
+msgstr "Вийти"
+
+#: loops/comments.php:63 loops/comments.php:66
+msgid "Your name"
+msgstr "Ім'я"
+
+#: loops/comments.php:64
+msgid "(required)"
+msgstr "(обов'язково)"
+
+#: loops/comments.php:70 loops/comments.php:73
+msgid "Your email address"
+msgstr "Ваша електронна адреса"
+
+#: loops/comments.php:71
+msgid "(required, but will not be published)"
+msgstr "(обов'язково)"
+
+#: loops/comments.php:82 loops/comments.php:83
+msgid "Your comment"
+msgstr "Ваш коментар"
+
+#: loops/comments.php:88
+msgid "Submit comment"
+msgstr "Надіслати коментар"
+
+#: inc/LoadMorePosts.php:143
+msgid "Load more posts..."
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Theme Options Customizer"
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "Scroll Top"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Customizer Custom Scroll Top"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Display"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Show/Hide scroll top"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid "Width"
+msgstr ""
+
+#: inc/customizer.php:117
+msgid "Height"
+msgstr ""
+
+#: inc/customizer.php:124
+msgid "Shape"
+msgstr ""
+
+#: inc/customizer.php:129
+msgid "Circle"
+msgstr ""
+
+#: inc/customizer.php:130
+msgid "Rounded"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "Square"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid "Position"
+msgstr ""
+
+#: inc/customizer.php:141
+msgid "Right"
+msgstr ""
+
+#: inc/customizer.php:142
+msgid "Left"
+msgstr ""
+
+#: inc/customizer.php:147
+msgid "Offset Left/Right"
+msgstr ""
+
+#: inc/customizer.php:154
+msgid "Offset bottom"
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "Border width"
+msgstr ""
+
+#: inc/customizer.php:168
+msgid "Border color"
+msgstr ""
+
+#: inc/customizer.php:175
+msgid "Background color"
+msgstr ""
+
+#: inc/customizer.php:182
+msgid "Background color hover"
+msgstr ""
+
+#: inc/customizer.php:189
+msgid "Arrow color"
+msgstr ""
+
+#: inc/customizer.php:197
+msgid "Analytics"
+msgstr ""
+
+#: inc/customizer.php:198
+msgid "Analytics Tracking Code"
+msgstr ""
+
+#: inc/customizer.php:239
+msgid "Google Analytics"
+msgstr ""
+
+#: inc/customizer.php:240 inc/customizer.php:262 inc/customizer.php:284
+#: inc/customizer.php:306 inc/customizer.php:328 inc/customizer.php:350
+msgid "Placed (head/body)"
+msgstr ""
+
+#: inc/customizer.php:245 inc/customizer.php:267 inc/customizer.php:289
+#: inc/customizer.php:311 inc/customizer.php:333 inc/customizer.php:355
+msgid "Head"
+msgstr ""
+
+#: inc/customizer.php:246 inc/customizer.php:268 inc/customizer.php:290
+#: inc/customizer.php:312 inc/customizer.php:334 inc/customizer.php:356
+msgid "Body"
+msgstr ""
+
+#: inc/customizer.php:251 inc/customizer.php:273 inc/customizer.php:361
+msgid "Paste tracking code here &dArr;"
+msgstr ""
+
+#: inc/customizer.php:256 inc/customizer.php:278 inc/customizer.php:366
+msgid "<!-- paste tracking code here -->"
+msgstr ""
+
+#: inc/customizer.php:261
+msgid "Yandex Metrika"
+msgstr ""
+
+#: inc/customizer.php:283
+msgid "Chat code"
+msgstr ""
+
+#: inc/customizer.php:295
+msgid "Paste chat code here &dArr;"
+msgstr ""
+
+#: inc/customizer.php:300
+msgid "<!-- paste chat code here -->"
+msgstr ""
+
+#: inc/customizer.php:305
+msgid "Remarketing code"
+msgstr ""
+
+#: inc/customizer.php:317
+msgid "Paste remarketing code here &dArr;"
+msgstr ""
+
+#: inc/customizer.php:322 inc/customizer.php:344
+msgid "<!-- paste remarketing code here -->"
+msgstr ""
+
+#: inc/customizer.php:327
+msgid "Facebook Pixel code"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "Paste Facebook Pixel code here &dArr;"
+msgstr ""
+
+#: inc/customizer.php:349
+msgid "Custom Analytics"
+msgstr ""
+
+#: inc/customizer.php:372 inc/helpers.php:527 inc/shortcodes.php:402
+#: inc/shortcodes.php:411 inc/shortcodes.php:434
+msgid "Login"
+msgstr "Увійти"
+
+#: inc/customizer.php:373
+msgid "Customizer Custom Login"
+msgstr ""
+
+#: inc/customizer.php:382
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:383
+msgid "Image size 80x80 px"
+msgstr ""
+
+#: inc/customizer.php:562
+msgid "Social"
+msgstr ""
+
+#: inc/customizer.php:563
+msgid "Customizer Custom Social links"
+msgstr ""
+
+#: inc/customizer.php:592
+msgid "Vk"
+msgstr ""
+
+#: inc/customizer.php:609
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:626
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer.php:643
+msgid "Linkedin"
+msgstr ""
+
+#: inc/customizer.php:660
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer.php:677
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer.php:694
+msgid "YouTube"
+msgstr ""
+
+#: inc/customizer.php:711
+msgid "Odnoklassniki"
+msgstr ""
+
+#: inc/customizer.php:780
+msgid "Phones"
+msgstr ""
+
+#: inc/customizer.php:781
+msgid "Customizer Custom Phone numbers"
+msgstr ""
+
+#: inc/customizer.php:791
+msgid "Phone №1"
+msgstr ""
+
+#: inc/customizer.php:798
+msgid "Phone №2"
+msgstr ""
+
+#: inc/customizer.php:805
+msgid "Phone №3"
+msgstr ""
+
+#: inc/customizer.php:812
+msgid "Phone №4"
+msgstr ""
+
+#: inc/login.php:21
+msgid "<strong>ERROR:</strong> The username and password is incorrect."
+msgstr "ПОМИЛКА: невірні ім'я чи пароль."
+
+#: inc/setup.php:188
 msgid "Front page"
 msgstr "Головна"
 
-#: functions.php:26
+#: inc/setup.php:189
 #, php-format
 msgid "Page %d"
 msgstr "Сторінка %d"
 
-#: functions.php:27
+#: inc/setup.php:190
 msgid "Error 404"
 msgstr "Помилка 404"
 
-#: functions.php:28
+#: inc/setup.php:191
 #, php-format
 msgid "Search results by query - <b>%s</b>"
 msgstr "Результати пошуку за запитом - <b>%s</ b>"
 
-#: functions.php:29
+#: inc/setup.php:192
 #, php-format
 msgid "Author archve: <b>%s</b>"
 msgstr "Архів автора: %s"
 
-#: functions.php:30
+#: inc/setup.php:193
 #, php-format
 msgid "Archive by <b>%d</b> year"
 msgstr "Архів за %d рік"
 
-#: functions.php:31
+#: inc/setup.php:194
 #, php-format
 msgid "Archive by: <b>%s</b>"
 msgstr "Архів за: <b>%s</b>"
 
-#: functions.php:33
+#: inc/setup.php:196
 #, php-format
 msgid "Media: %s"
 msgstr "Медіа: %s"
 
-#: functions.php:34
+#: inc/setup.php:197
 #, php-format
 msgid "Posts by tag: <b>%s</b>"
 msgstr "Записи по мітці: <b>%s</b>"
 
-#: functions.php:35
+#: inc/setup.php:198
 #, php-format
 msgid "%1$s from \"%2$s\" by tag: <b>%3$s</b>"
 msgstr "%1$s з \"%2$s\" по тегу: <b>%3$s</b>"
 
-#. Name of the template
-msgid "Home Page"
-msgstr "Головна сторінка"
-
-#. Name of the template
-msgid "Landing"
+#: inc/auth.php:74
+msgid "Password is incorrect!"
 msgstr ""
 
-#. Name of the template
-msgid "Page Without Breadcrumbs"
+#: inc/auth.php:77
+msgid "Login is incorrect!"
 msgstr ""
 
-#. Name of the template
-msgid "Sidebar Left"
+#: inc/auth.php:230
+msgid "Passwords must be the same!"
 msgstr ""
 
-#. Name of the template
-msgid "Sidebar Right"
+#: inc/auth.php:234
+msgid "Error with creating user. Please, try again later!"
 msgstr ""
 
-#: search.php:6
-msgid "Search Results for"
-msgstr "Результат пошуку для"
+#: inc/auth.php:238
+msgid "User with this login or email has already registered"
+msgstr ""
 
-#: searchform.php:4
-msgid "Search"
-msgstr "Пошук"
+#: inc/auth.php:243
+msgid "Login or password are incorrect!"
+msgstr ""
 
-#: functions/admin.php:9
+#: inc/admin.php:10
 msgid "Developed by:"
 msgstr "Розробник:"
 
-#: functions/admin.php:10
+#: inc/admin.php:11
 msgid "https://brainworks.com.ua"
 msgstr ""
 
-#: functions/admin.php:11
+#: inc/admin.php:12
 msgid "brainworks.com.ua"
 msgstr ""
 
-#: functions/admin.php:14
+#: inc/admin.php:17 inc/admin.php:85
+msgid "Running PHP version"
+msgstr ""
+
+#: inc/admin.php:22
 #, php-format
 msgid "%d request pear %s sec."
 msgstr ""
 
-#: functions/admin.php:19
+#: inc/admin.php:28
 #, php-format
 msgid "Spent %d Mb of memory (including unused pages %d Mb)"
 msgstr ""
 
-#: functions/admin.php:42
+#: inc/admin.php:53
 msgid "Support:"
 msgstr "Підтримка:"
 
-#: functions/admin.php:43 functions/admin.php:44
+#: inc/admin.php:54 inc/admin.php:55
 msgid "web@brainworks.com.ua"
 msgstr ""
 
-#: functions/admin.php:49
+#: inc/admin.php:60
 msgid "Tel:"
 msgstr "Тел:"
 
-#: functions/admin.php:50 functions/admin.php:51
+#: inc/admin.php:61 inc/admin.php:62
 msgid "+38 (063) 20-37-137"
 msgstr ""
 
-#: functions/customizer.php:28
-msgid "Theme Options"
-msgstr ""
+#: inc/custom-post-types.php:9 inc/custom-post-types.php:14
+msgid "Reviews"
+msgstr "Відгуки"
 
-#: functions/customizer.php:29
-msgid "Theme Options Customizer"
-msgstr ""
+#: inc/custom-post-types.php:10
+msgid "Review"
+msgstr "Відгук"
 
-#: functions/customizer.php:35
-msgid "Scroll Top"
-msgstr ""
-
-#: functions/customizer.php:36
-msgid "Customizer Custom Scroll Top"
-msgstr ""
-
-#: functions/customizer.php:100
-msgid "Display"
-msgstr ""
-
-#: functions/customizer.php:101
-msgid "Show/Hide scroll top"
-msgstr ""
-
-#: functions/customizer.php:108
-msgid "Width"
-msgstr ""
-
-#: functions/customizer.php:115
-msgid "Height"
-msgstr ""
-
-#: functions/customizer.php:122
-msgid "Shape"
-msgstr ""
-
-#: functions/customizer.php:127
-msgid "Circle"
-msgstr ""
-
-#: functions/customizer.php:128
-msgid "Rounded"
-msgstr ""
-
-#: functions/customizer.php:129
-msgid "Square"
-msgstr ""
-
-#: functions/customizer.php:134
-msgid "Position"
-msgstr ""
-
-#: functions/customizer.php:139
-msgid "Right"
-msgstr ""
-
-#: functions/customizer.php:140
-msgid "Left"
-msgstr ""
-
-#: functions/customizer.php:145
-msgid "Offset Left/Right"
-msgstr ""
-
-#: functions/customizer.php:152
-msgid "Offset bottom"
-msgstr ""
-
-#: functions/customizer.php:159
-msgid "Border width"
-msgstr ""
-
-#: functions/customizer.php:166
-msgid "Border color"
-msgstr ""
-
-#: functions/customizer.php:173
-msgid "Background color"
-msgstr ""
-
-#: functions/customizer.php:180
-msgid "Background color hover"
-msgstr ""
-
-#: functions/customizer.php:187
-msgid "Arrow color"
-msgstr ""
-
-#: functions/customizer.php:195
-msgid "Analytics"
-msgstr ""
-
-#: functions/customizer.php:196
-msgid "Analytics Tracking Code"
-msgstr ""
-
-#: functions/customizer.php:231
-msgid "Google Analytics"
-msgstr ""
-
-#: functions/customizer.php:232 functions/customizer.php:254
-#: functions/customizer.php:276 functions/customizer.php:298
-#: functions/customizer.php:320
-msgid "Placed (head/body)"
-msgstr ""
-
-#: functions/customizer.php:237 functions/customizer.php:259
-#: functions/customizer.php:281 functions/customizer.php:303
-#: functions/customizer.php:325
-msgid "Head"
-msgstr ""
-
-#: functions/customizer.php:238 functions/customizer.php:260
-#: functions/customizer.php:282 functions/customizer.php:304
-#: functions/customizer.php:326
-msgid "Body"
-msgstr ""
-
-#: functions/customizer.php:243 functions/customizer.php:265
-#: functions/customizer.php:331
-msgid "Paste tracking code here &dArr;"
-msgstr ""
-
-#: functions/customizer.php:248 functions/customizer.php:270
-#: functions/customizer.php:336
-msgid "<!-- paste tracking code here -->"
-msgstr ""
-
-#: functions/customizer.php:253
-msgid "Yandex Metrika"
-msgstr ""
-
-#: functions/customizer.php:275
-msgid "Chat code"
-msgstr ""
-
-#: functions/customizer.php:287
-msgid "Paste chat code here &dArr;"
-msgstr ""
-
-#: functions/customizer.php:292
-msgid "<!-- paste chat code here -->"
-msgstr ""
-
-#: functions/customizer.php:297
-msgid "Remarketing code"
-msgstr ""
-
-#: functions/customizer.php:309
-msgid "Paste remarketing code here &dArr;"
-msgstr ""
-
-#: functions/customizer.php:314
-msgid "<!-- paste remarketing code here -->"
-msgstr ""
-
-#: functions/customizer.php:319
-msgid "Custom Analytics"
-msgstr ""
-
-#: functions/customizer.php:342
-msgid "Login"
-msgstr "Увійти"
-
-#: functions/customizer.php:343
-msgid "Customizer Custom Login"
-msgstr ""
-
-#: functions/customizer.php:352
-msgid "Logo"
-msgstr ""
-
-#: functions/customizer.php:353
-msgid "Image size 80x80 px"
-msgstr ""
-
-#: functions/customizer.php:360
-msgid "Social"
-msgstr ""
-
-#: functions/customizer.php:361
-msgid "Customizer Custom Social links"
-msgstr ""
-
-#: functions/customizer.php:374
-msgid "Vk"
-msgstr ""
-
-#: functions/customizer.php:381
-msgid "Twitter"
-msgstr ""
-
-#: functions/customizer.php:388
-msgid "Facebook"
-msgstr ""
-
-#: functions/customizer.php:395
-msgid "Linkedin"
-msgstr ""
-
-#: functions/customizer.php:402
-msgid "Instagram"
-msgstr ""
-
-#: functions/customizer.php:409
-msgid "Google Plus"
-msgstr ""
-
-#: functions/customizer.php:416
-msgid "YouTube"
-msgstr ""
-
-#: functions/customizer.php:424
-msgid "Phones"
-msgstr ""
-
-#: functions/customizer.php:425
-msgid "Customizer Custom Phone numbers"
-msgstr ""
-
-#: functions/customizer.php:435
-msgid "Phone №1"
-msgstr ""
-
-#: functions/customizer.php:442
-msgid "Phone №2"
-msgstr ""
-
-#: functions/customizer.php:449
-msgid "Phone №3"
-msgstr ""
-
-#: functions/customizer.php:456
-msgid "Phone №4"
-msgstr ""
-
-#: functions/feedback.php:28
+#: inc/feedback.php:30
 msgid "at"
 msgstr ""
 
-#: functions/feedback.php:30
+#: inc/feedback.php:34
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш коментар очікує на модерацію."
 
-#: functions/feedback.php:41
+#: inc/feedback.php:46
 msgid "Edit"
 msgstr "Редагувати"
 
-#: functions/index-pagination.php:17
+#: inc/index-pagination.php:20
 msgid "<i class=\"fa fa-angle-left\"></i> Newer"
 msgstr "Свіжіший"
 
-#: functions/index-pagination.php:18
+#: inc/index-pagination.php:21
 msgid "Older <i class=\"fa fa-angle-right\"></i>"
 msgstr "Ранній"
 
-#: functions/login.php:19
-msgid "<strong>ERROR:</strong> The username and password is incorrect."
-msgstr "ПОМИЛКА: невірні ім'я чи пароль."
+#: inc/helpers.php:530
+msgid "Logout"
+msgstr ""
 
-#: functions/navbar.php:4
+#: inc/navbar.php:4
 msgid "Main Navigation"
 msgstr ""
 
-#: functions/navbar.php:5
+#: inc/navbar.php:5
 msgid "Second Menu"
 msgstr ""
 
-#: functions/widgets.php:9
+#: inc/widgets.php:9
 msgid "Sidebar"
 msgstr ""
 
-#: functions/widgets.php:11 functions/widgets.php:24
+#: inc/widgets.php:11 inc/widgets.php:24
 msgid "The sidebar widget area"
 msgstr ""
 
-#: functions/widgets.php:22
+#: inc/widgets.php:22
 msgid "Sidebar 2"
 msgstr ""
 
-#: functions/widgets.php:35
+#: inc/widgets.php:35
 msgid "Footer"
 msgstr ""
 
-#: functions/widgets.php:37
+#: inc/widgets.php:37
 msgid "The footer widget area"
 msgstr ""
 
-#: loops/comments.php:8
-msgid "This post is password protected. Enter the password to view comments."
-msgstr "Цей запис захищен. Введіть пароль, щоб побачити коментарі."
-
-#: loops/comments.php:17
-msgid "Feedback"
-msgstr "Відгук"
-
-#: loops/comments.php:19 loops/content-blog-1-sbl.php:25
-#: loops/content-blog-1-sbr.php:22 loops/content-blog-2.php:21
-#: loops/content-blog-3.php:22
-msgid "Comments"
-msgstr "Коментарі"
-
-#: loops/comments.php:19 loops/content-blog-1-sbl.php:25
-#: loops/content-blog-1-sbr.php:22 loops/content-blog-2.php:21
-#: loops/content-blog-3.php:22
-msgid "None"
-msgstr "Нет"
-
-#: loops/comments.php:54
-msgid "Logged in as"
-msgstr "Ви увійшли як"
-
-#: loops/comments.php:55
-msgid "Log out of this account"
-msgstr "Вийти з цього акаунту"
-
-#: loops/comments.php:55
-msgid "Log out"
-msgstr "Вийти"
-
-#: loops/comments.php:60 loops/comments.php:61
-msgid "Your name"
-msgstr "Ім'я"
-
-#: loops/comments.php:60
-msgid "(required)"
-msgstr "(обов'язково)"
-
-#: loops/comments.php:64 loops/comments.php:65
-msgid "Your email address"
-msgstr "Ваша електронна адреса"
-
-#: loops/comments.php:64
-msgid "(required, but will not be published)"
-msgstr "(обов'язково)"
-
-#: loops/comments.php:73 loops/comments.php:74
-msgid "Your comment"
-msgstr "Ваш коментар"
-
-#: loops/comments.php:78
-msgid "Submit comment"
-msgstr "Надіслати коментар"
-
-#: loops/content-2.php:33
-msgid "Continue reading"
-msgstr "Читати далі"
-
-#: loops/content-2.php:45 loops/content-blog-1-sbl.php:36
-#: loops/content-blog-1-sbr.php:36 loops/content-blog-2.php:32
-#: loops/content-blog-3.php:33 loops/content.php:45
-msgid "Previous"
-msgstr "Попередній"
-
-#: loops/content-2.php:46 loops/content-blog-1-sbl.php:37
-#: loops/content-blog-1-sbr.php:37 loops/content-blog-2.php:33
-#: loops/content-blog-3.php:34 loops/content.php:46
-msgid "Next"
-msgstr "Наступний"
-
-#: loops/content-blog-1-sbl.php:13 loops/content-blog-1-sbr.php:10
-#: loops/content-blog-2.php:9 loops/content-blog-3.php:10
-msgid "By"
-msgstr "Автор"
-
-#: loops/content-search.php:17
-msgid "Sorry, your search yielded no results."
-msgstr "Ваш пошук не дав результату."
-
-#: loops/content.php:29
-msgid " <i class=\"glyphicon glyphicon-arrow-right\"></i>"
+#: inc/shortcodes.php:263
+msgid "Читать полностью"
 msgstr ""
 
-#: woocommerce/single-product/add-to-cart/simple.php:59
-#: woocommerce/single-product/add-to-cart/variation-add-to-cart-button.php:35
-msgid "Купить в 1 клик"
+#: inc/shortcodes.php:406 inc/shortcodes.php:442
+msgid "Password"
+msgstr ""
+
+#: inc/shortcodes.php:438
+msgid "Email"
+msgstr ""
+
+#: inc/shortcodes.php:446
+msgid "Retry password"
+msgstr ""
+
+#: inc/shortcodes.php:451
+msgid "Register"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variation-add-to-cart-button.php:30
+#: woocommerce/single-product/add-to-cart/simple.php:48
+msgid "Buy in one click"
 msgstr ""
 
 #. Name of the theme
-msgid "brainworks-v4.7.5"
+msgid "brainworks-v4.8.4"
 msgstr ""
 
 #. Author of the theme
