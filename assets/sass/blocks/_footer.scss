@@ -11,17 +11,55 @@
 }
 
 .copyright {
-    padding: 14px 0;
-    background-color: $footerBgColor;
+    padding: 25px 0;
+    background-color: #fff;
     text-align: center;
-    color: $footerFontColor;
+    color: #000;
 
     a {
-        color: $footerFontColor;
-        text-decoration: underline;
+        color: $themeColorThree;
 
         &:hover {
             color: $footerLinkColorActive;
         }
+    }
+}
+
+.footer-container {
+    padding: 60px;
+    background-color: $footerBgColor;
+
+    .footer-block {
+        background-color: $footerBlockBgColor;
+
+        .footer-block-element {
+            padding: 10px 10px 10px 45px;
+            > p {
+                padding: 4px 0;
+                a {
+                    color: #fff;
+                    font-weight: lighter;
+                    &:hover {
+                        color: #fff;
+                        opacity: 0.95;
+                    }
+                }
+            }
+
+            &:first-child {
+                margin-top: 25px;
+            }
+            &:last-child {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    h3 {
+        font-family: "ProxmaBlackItalic";
+        font-size: 28px;
+        color: #fff;
+        text-transform: uppercase;
+        padding-bottom: 10px;
     }
 }

@@ -12,7 +12,6 @@
             html.addClass("is-mobile");
         }
         html.removeClass("no-js").addClass("js");
-        scrollToElement();
         sidebarAccordion();
         reviews(".js-reviews");
         scrollTop(".js-scroll-top");
@@ -23,11 +22,27 @@
         stickFooter(".js-footer", ".js-container");
         anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
         buyOneClick(".one-click", '[data-field-id="field7"]', "h1.page-name");
+        handleForm(".default-form");
         d.on("copy", addLink);
         w.on("resize", function() {
             if (w.innerWidth >= 630) {
                 removeAllStyles($(".js-menu"));
             }
+        });
+        var sliderButtons = $(".products-pagination-button");
+        $(".products-slider").on("init", function(slick) {
+            var target = $(slick.currentTarget);
+            sliderButtons.each(function(index, element) {
+                $(element).on("click", function(e) {
+                    target.slick("slickGoTo", index);
+                });
+            }).eq(0).addClass("_active");
+        }).slick({
+            slidesToShow: 1,
+            prevArrow: $(".products-slider-arrow._left"),
+            nextArrow: $(".products-slider-arrow._right")
+        }).on("afterChange", function(slick, currentSlide) {
+            sliderButtons.removeClass("_active").eq(currentSlide.currentSlide).addClass("_active");
         });
     });
     var stickFooter = function stickFooter(footer, container) {
@@ -43,9 +58,9 @@
                 autoplay: false,
                 autoplaySpeed: 3e3,
                 arrows: true,
-                prevArrow: '<button type="button" class="slick-prev">&lsaquo;</button>',
-                nextArrow: '<button type="button" class="slick-next">&rsaquo;</button>',
-                dots: false,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fal fa-angle-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fal fa-angle-right"></i></button>',
+                dots: true,
                 dotsClass: "slick-dots",
                 draggable: true,
                 fade: false,
@@ -156,17 +171,15 @@
         var links = $("a");
         links.each(function(index, element) {
             var $element = $(element), href = $element.attr("href");
-            if (href[0] === "#") {
-                $element.on("click", function(e) {
-                    e.preventDefault();
-                    var el = $(href);
-                    if (el.length) {
-                        $("html, body").animate({
-                            scrollTop: $(href).offset().top
-                        }, animationSpeed);
-                    }
-                });
-            }
+            $element.on("click", function(e) {
+                e.preventDefault();
+                var el = $(href);
+                if (el.length) {
+                    $("html, body").animate({
+                        scrollTop: $(href).offset().top
+                    }, animationSpeed);
+                }
+            });
         });
     };
     var sidebarAccordion = function sidebarAccordion() {
@@ -221,6 +234,44 @@
                 ajaxStart = false;
                 throw new Error("Handling Ajax request loading posts has caused an ".concat(textStatus, " - ").concat(errorThrown));
             });
+        });
+    };
+    var handleForm = function handleForm(selector) {
+        $(selector).on("submit", function(e) {
+            e.preventDefault();
+            var $form = $(e.target), action = $form.attr("action"), method = $form.attr("method") || "POST", fields = $form.find("input"), data = [], error = {
+                value: false,
+                set: function set(value) {
+                    this.value = value;
+                }
+            };
+            fields.each(function(index, element) {
+                if (!element.value) {
+                    element.classList.add("_error");
+                    error.set(true);
+                } else {
+                    data.push({
+                        value: element.value,
+                        placeholder: element.placeholder
+                    });
+                }
+            });
+            if (!error.value) {
+                $form.find("button[type=submit]").attr("disabled");
+                $.ajax({
+                    url: action,
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        fields: data
+                    }),
+                    method: method,
+                    cache: false,
+                    success: function success(response) {
+                        $form.html('<h4 class="header header--white form-default-response">'.concat(response.Data.text, "</h4>"));
+                    }
+                });
+            }
         });
     };
 })(window, document, jQuery, window.jpAjax);

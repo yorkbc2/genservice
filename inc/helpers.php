@@ -391,9 +391,9 @@ if (!function_exists('get_default_logo_link')) {
 
         } else {
 
-            $file = get_template_directory_uri() . '/assets/img/logo.png';
+            $file = get_template_directory_uri() . '/assets/img/logo.svg';
 
-            $img = sprintf('<img class="logo-img" src="%s" alt="%s">', esc_url($file), get_bloginfo('name'));
+            $img = sprintf('<img width="300px" class="logo-img" src="%s" alt="%s">', esc_url($file), get_bloginfo('name'));
 
             $link = sprintf('<a class="logo-link" href="%s">%s</a>', esc_url(home_url('/')), $img);
 
@@ -530,5 +530,43 @@ if (!function_exists("the_auth_button")) {
             $text = __("Logout", "brainworks");
         }
         echo sprintf('<a href="%s" class="button-medium">%s</a>', $link, $text);
+    }
+}
+
+if (!function_exists('get_last_posts')) {
+    function get_last_posts() {
+        $posts = get_posts([
+            'posts_per_page' => 3,
+            'post_status' => 'publish',
+            'post_type' => 'post',
+            'meta_query' => array(
+                array(
+                    'key' => 'on-front',
+                    'value' => 'yes',
+                )
+            ),
+        ]);
+
+
+        return $posts;
+    }
+}
+
+if (!function_exists('_layerslider')) {
+    function _layerslider($id) {
+        if (function_exists('layerslider')) {
+            layerslider($id);
+        }
+    }
+}
+
+if (!function_exists('get_slide_items')) {
+    function get_slide_items($count = 3) {
+        $posts = get_posts([
+            'post_type' => 'slider_items',
+            'posts_per_page' => $count
+        ]);
+
+        return $posts;
     }
 }

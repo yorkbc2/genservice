@@ -599,3 +599,72 @@ if (!function_exists('bw_reviews_shortcode')) {
 
     add_shortcode('bw-reviews', 'bw_reviews_shortcode');
 }
+
+
+if (!function_exists('bw_products_slider')) {
+    function bw_products_slider() {
+        $slides = get_slide_items();
+        if (sizeof($slides)) {
+            $slide_content = '
+                <div class="product-slide row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <h2 class="product-slide-header header header--big header--quote">%s</h2>
+                        <div class="product-slide-content">%s</div>
+                        <div class="sp-md-4 sp-sm-4 sp-xs-4"></div>
+                        <div class="text-left">
+                            <button class="button iconed-button">
+                                <i class="fal fa-plus iconed-button-icon show-spec-%3$s"></i>
+                                <span>'.__("Спецификация", "brainworks").'</span>
+                            </button>
+                            <button class="button-large show-price-%s">' . __("Узнать цену", "brainworks") . '</button>
+                        </div>
+                        <div class="sp-md-4 sp-sm-4 sp-xs-4"></div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <img class="product-slide-image" src="%s" alt="" title="%1$s"  />
+                    </div>
+                </div>
+            ';
+
+            $container = '<div class="products-slider">
+                %s
+            </div>';
+
+            $pagination_button = '
+                <button class="products-pagination-button">
+                    <img src="%s" alt="" title="%2$s" />
+                    <h4>%s</h4>
+                </button>
+            ';
+
+            $pagination_buttons_container = '<div class="products-pagination">%s</div>';
+            
+            $content = '';
+            $pagination_content = '';
+            foreach ($slides as $slide) {
+                $title = apply_filters('the_title', $slide->post_title);
+                $img_url = get_the_post_thumbnail_url($slide->ID, 'full');
+                $icon_url = get_post_meta($slide->ID, 'icon')[0];
+                if ($icon_url) {
+                    $icon_url = wp_get_attachment_image_src($icon_url)[0];
+                }
+                $content .= sprintf($slide_content, $title, apply_filters('the_content', $slide->post_content),
+                    $slide->ID,
+                    $img_url);
+                $pagination_content .= sprintf($pagination_button, $icon_url, $title);
+            }
+            $container = sprintf($container, $content);
+            $pagination_buttons_container = sprintf($pagination_buttons_container, $pagination_content);
+            $arrows = '
+                <button type="button" class="products-slider-arrow _left"><i class="fal fa-angle-left"></i></button>
+                <button type="button" class="products-slider-arrow _right"><i class="fal fa-angle-right"></i></button>
+            ';
+
+            return $container . $pagination_buttons_container . $arrows;
+        }
+
+        return '';
+    }
+
+    add_shortcode('bw-products-slider', 'bw_products_slider');
+}

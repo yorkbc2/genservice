@@ -33,6 +33,7 @@
         "start": "yarn install --modules-folder ./../node_modules",
         "sass": "node ./node_modules/gulp/bin/gulp.js sass",
         "babel": "node ./node_modules/gulp/bin/gulp.js babel",
+        "watch": "node ./node_modules/gulp/bin/gulp.js watch",
         "lint": "./node_modules/.bin/eslint assets/js/es6/**/*.js"
     },
     "husky": {

@@ -1,52 +1,84 @@
 @mixin button-style {
-    top: 0;
-    text-align: center;
     position: relative;
     display: inline-block;
-    border-radius: $borderRadius;
-    font-family: $fontFamilyTwo;
-    height: auto;
+
+    background: linear-gradient($themeColorThree, $themeColorTwo);
+    border: 0;
+
+    border-radius: 3px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
-    font-size: 16px;
-    border: 1px solid $buttonOutlinedFirstColor;
-    background-color: transparent;
-    box-shadow: none;
-    line-height: 1 !important;
 
-    color: $buttonOutlinedFirstColor;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    z-index: 5;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0,0,0,.35);
 
-    a {
-        color: $buttonFontColor;
-        display: inline-block;
+    &:hover {
+        color: #fff;
+        &,
+        &::before {
+            background: linear-gradient(lighten($themeColorThree, 5%), lighten($themeColorTwo, 5%));
+        } 
     }
 
-    span {
-        color: $buttonFontColor;
-        display: inline-block;
-    }
-
-    &:focus {
-        outline: 0;
-    }
-
-    &.button-inverse {
-        background: $buttonOutlinedFirstColor;
-        color: $buttonOutlinedSecondColor;
-
-        &:hover,
-        &:active {
-            color: $buttonOutlinedFirstColor;
-            background: transparent;
+    &:active { 
+        color: #fff;
+        transform: translateY(8%);
+        &::after {
+            top: 4px;
+        }
+        &::before {
+            background: linear-gradient(darken($themeColorThree, 5%), darken($themeColorTwo, 5%));
         }
     }
 
-    &:hover,
-    &:active {
-        background-color: $buttonOutlinedFirstColor;
-        color: $buttonOutlinedSecondColor;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: darken($themeColorThree, 20%);
+        left: 0;
+        top: 14%;
+        z-index: -2;
+        border-radius: 3px;
+        transition: top 0.2s ease-in-out;
     }
 
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 3px;
+        background: linear-gradient($themeColorThree, $themeColorTwo);
+    }
+
+    &.button-block {
+        width: 100%;
+    }
+
+    &.button-reversed {
+        background: linear-gradient($themeColorFive, $themeColorFour);
+        &::after {
+            background: darken($themeColorFive, 20%);
+        }
+        &::before {
+            background: linear-gradient($themeColorFive, $themeColorFour);
+        }
+        &:hover {
+            &,
+            &:before {
+                background: linear-gradient(lighten($themeColorFive, 5%), lighten($themeColorFour, 5%));
+            }
+        }
+    }
 }
 
 %button-style {
@@ -161,12 +193,12 @@ a.button {
     button.button,
     a.button {
         padding: 14px 60px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .button-medium {
         padding: 12px 32px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .button-small {
@@ -180,16 +212,41 @@ a.button {
     button.button,
     a.button {
         padding: 15px 65px;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .button-medium {
         padding: 13px 35px;
-        font-size: 15px;
+        font-size: 13px;
     }
 
     .button-small {
         padding: 10px 20px;
-        font-size: 13px;
+        font-size: 12px;
+    }
+}
+
+button.button.iconed-button,
+a.button.iconed-button {
+    padding-left: 50px;
+    padding-right: 10px;
+    margin-right: 15px;
+    background: transparent;
+    color: #333;
+
+    box-shadow: none;
+    
+    > .iconed-button-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        font-size: 28px;
+        color: #111;
+        font-weight: 100;
+    }
+    &::after,
+    &::before {
+        display: none;
     }
 }

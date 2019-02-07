@@ -16,73 +16,96 @@
 
 <?php wp_body(); ?>
 
-<div class="wrapper">
-    <?php /*
-    <div class="pre-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <nav class="second-menu">
-                        <?php wp_nav_menu(array(
-                            'theme_location' => 'second-menu',
-                            'container' => false,
-                            'menu_class' => 'menu-container',
-                            'menu_id' => '',
-                            'fallback_cb' => 'wp_page_menu',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth' => 2
-                        )); ?>
-                    </nav>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    Some info here
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    Some info here
-                </div>
-            </div>
-        </div>
-    </div>
-    */ ?>
+<div class="wrapper wrapper--paged">
 
-    <header class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <?php get_default_logo_link(); ?>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <?php get_search_form(); ?>
+<header class="page-header">
+        <div class="container page-header-container">
+            <div class="page-header-column page-header-logo">
+                <?php get_default_logo_link(); ?>
+            </div>
+            <div class="page-header-column">
+                <div class="page-header-row page-header-row--right page-header-row--center-mobile">
+                    <?php if (has_social()): ?>
+                        <div class="page-header-row-column">
+                            <ul class="social-list">
+                                <?php foreach (get_social() as $social): ?>
+                                    <li>
+                                        <a href="<?php echo $social['url'] ?>" target="_blank" title="<?php echo $social['text']; ?>">
+                                            <i class="<?php echo $social['icon']; ?>"></i>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (has_phones()): ?>
+                        <div class="page-header-row-column">
+                            <?php $phones = get_phones();
+                                    $first_phone = $phones[0]; ?>
+                            <div class="phone-list-drop">
+                                <a href="tel:<?php the_phone_number($first_phone); ?>">
+                                    <?php echo $first_phone; ?>
+                                    <?php if (sizeof($phones) > 1): ?>
+                                    <button class="caret dropdown-trigger" type="button" data-list=".dropdown-list">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                    <?php endif; ?>
+                                </a>
+                                <?php if (sizeof($phones) > 1): ?>
+                                <ul class="phone-list-dropdown dropdown-list">
+                                    <?php for ($i = 1, $len = sizeof($phones); $i < $len; $i++): ?>
+                                        <li>
+                                            <a href="tel:<?php the_phone_number($phones[$i]); ?>">
+                                                <?php echo $phones[$i]; ?>
+                                            </a>
+                                        </li>
+                                    <?php endfor; ?>
+                                </ul>
+                                <?php endif; ?>
+                            </div>
+                        </div> 
+                    <?php endif; ?>
+                    <div class="page-header-row-column">
+                        <button type="button" class="button button-large page-header-callback">
+                            <?php _e("Обратный звонок", "brainworks"); ?>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <?php if (has_nav_menu('main-nav')) { ?>
-        <nav class="nav js-menu">
-            <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
-            <?php wp_nav_menu(array(
-                'theme_location' => 'main-nav',
-                'container' => false,
-                'menu_class' => 'menu-container',
-                'menu_id' => '',
-                'fallback_cb' => 'wp_page_menu',
-                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth' => 3
-            )); ?>
-        </nav>
-    <?php } ?>
+    <div class="nav-container">
+        <div class="container">
+            <nav class="nav">
+                <div class="js-menu">
+                    <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'main-nav',
+                        'container' => false,
+                        'menu_class' => 'menu-container',
+                        'menu_id' => '',
+                        'fallback_cb' => 'wp_page_menu',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                        'depth' => 3
+                    )); ?>
+                </div>
+                <div class="nav-switcher">
+                    <ul class="lang-list">
+                        <?php pll_the_languages(['hide_if_empty' => 0]); ?>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
 
     <div class="container js-container">
 
-        <div class="nav-mobile-header">
+    <div class="nav-mobile-header">
             <button class="hamburger js-hamburger" type="button" tabindex="0">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
             </button>
-            <div class="logo"><?php get_default_logo_link(); ?></div>
+            <!-- <div class="logo"><?php get_default_logo_link(); ?></div> -->
         </div>

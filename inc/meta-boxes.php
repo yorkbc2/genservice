@@ -208,3 +208,79 @@ function bw_save_reviews_addition($post_id)
     }
 
 }
+
+add_filter( 'rwmb_meta_boxes', 'front_page_metaboxes' );
+function front_page_metaboxes( $meta_boxes ) {
+    $front = get_option( 'page_on_front' );
+    $translated_pages = pll_get_post($front, 'ru');
+    if (isset($_GET['post'])) {
+        if ($_GET['post'] !== $front) {
+            return $meta_boxes;
+        }
+    } else if (isset($_POST['post_ID'])) {
+        if ($_POST['post_ID'] !== $front) {
+            return $meta_boxes;
+        }
+    }
+
+    if (isset($_GET["post_type"]) && !isset($_GET["post"])) {
+        return $meta_boxes;
+    }
+
+    $meta_boxes[] = array(
+        'title'   => 'Настройки главной страницы',
+        'include' => [
+            'custom' => 'front_page_access',
+            'relation' => 'AND'
+        ],
+        'show_on'	  => array( 'id' => array( get_option('page_on_front') ) ),
+        'post_types' => array('page' ),
+        'context' => 'advanced',
+        'priority' => 'default',
+        'autosave' => 'false',
+        'fields'  => array(
+            array(
+                'id' => 'second_screen_text',
+                'name' => esc_html__( 'Текст на втором экране(Большой)', 'metabox-online-generator' ),
+                'type' => 'text',
+            ),
+            array(
+                'id' => 'second_screen_text_second',
+                'name' => esc_html__( 'Текст на втором экране(Малый)', 'metabox-online-generator' ),
+                'type' => 'wysiwyg',
+            ),
+            array(
+                'id' => 'adv_col_1',
+                'type' => 'text',
+                'name' => esc_html__( 'Преимущества (Колонка №1)', 'metabox-online-generator' ),
+            ),
+            array(
+                'id' => 'adv_col_2',
+                'type' => 'text',
+                'name' => esc_html__( 'Преимущества (Колонка №2)', 'metabox-online-generator' ),
+            ),
+            array(
+                'id' => 'adv_col_3',
+                'type' => 'text',
+                'name' => esc_html__( 'Преимущества (Колонка №3)', 'metabox-online-generator' ),
+            ),
+            // array(
+            //     'id' => 'sale_title',
+            //     'type' => 'text',
+            //     'name' => esc_html__( 'Название акции', 'metabox-online-generator' ),
+            // ),
+            // array(
+            //     'id' => 'sale_text',
+            //     'name' => esc_html__( 'Текст акции', 'metabox-online-generator' ),
+            //     'type' => 'wysiwyg',
+            // ),
+            // array(
+            //     'id' => 'sale_image',
+            //     'type' => 'image_advanced',
+            //     'name' => esc_html__( 'Картинка акции', 'metabox-online-generator' ),
+            //     'max_file_uploads' => '1',
+            // ),
+        ),
+    );
+	return $meta_boxes;
+}

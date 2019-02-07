@@ -1,7 +1,7 @@
 <?php
 
 define('_BRAINWORKS_AUTH', '_BRAINWORKS_AUTH');
-session_start();
+// session_start();
 if (!function_exists('get_bw_session')) {
     function get_bw_session($key = "")
     {

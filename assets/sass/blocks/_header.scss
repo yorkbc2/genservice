@@ -5,9 +5,100 @@
 }
 
 .page-header {
-    padding: 10px 0;
-    background-color: $headerBgColor;
-    color: $headerFontColor;
+    position: relative;
+
+    padding: 25px 0;
+
+    .page-header-container {
+        display: flex;
+    }
+
+    .page-header-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+    }
+
+    .page-header-logo {
+        max-width: 300px;
+    }
+
+    .page-header-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        &.page-header-row--right {
+            justify-content: flex-end;
+        }
+
+        .page-header-row-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    @media screen and (max-width: 876px) {
+        .social-list {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 678px) {
+        padding: 10px 0;
+
+        .page-header-logo  {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .page-header-container {
+            flex-direction: column;
+            justify-content: center;
+            > * {
+                text-align: center;
+            }
+        }
+
+        .page-header-row {
+            flex-direction: column;
+        }
+
+        .phone-list-drop {
+            margin: 8px 0;
+            .caret {
+                display: none;
+            }
+
+            a {
+                margin-bottom: 7px;
+                display: inline-block;
+            }
+
+            .phone-list-dropdown {
+                position: static;
+                opacity: 1;
+                top: 0;
+                box-shadow: none;
+                li {
+                    text-align: center;
+                    
+
+                    a {
+                        border-bottom: 0;
+                        padding: 0;    
+                    }
+                }
+            }
+        }
+
+        .social-list {
+            display: block;
+            margin: 10px 0 5px 0;
+        }
+    }
 }
 
 .logo {
@@ -19,8 +110,8 @@
     }
 }
 
-.phone {
-    @extend %reset-list;
+.phone { 
+    @extend %reset-list; 
 
     &,
     &-item {

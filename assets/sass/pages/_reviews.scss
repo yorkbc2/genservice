@@ -1,12 +1,12 @@
-$review-title-color: #333 !default;
-$review-title-font-size: 16px !default;
+$review-title-color: #fff !default;
+$review-title-font-size: 32px !default;
 $review-title-font-weight: normal !default;
 $review-title-text-transform: none !default;
 
 $review-client-size: 100px !default;
 
-$review-content-color: #000 !default;
-$review-content-font-size: 16px !default;
+$review-content-color: #fff !default;
+$review-content-font-size: 20px !default;
 
 $review-social-size: 25px !default;
 $review-social-color: #fff !default;
@@ -15,16 +15,16 @@ $review-social-hover-color: #fff !default;
 $review-social-hover-background: #2c3e50 !default;
 
 $review-arrow-size: 32px !default;
-$review-arrow-color: #333 !default;
-$review-arrow-font-size: 24px !default;
+$review-arrow-color: #fff !default;
+$review-arrow-font-size: 48px !default;
 $review-arrow-font-weight: bold !default;
 $review-arrow-background: transparent !default;
-$review-arrow-border-width: 1px !default;
+$review-arrow-border-width: 0px !default;
 $review-arrow-border-color: #333 !default;
 $review-arrow-radius: 50% !default;
 $review-arrow-hover-color: #fff !default;
-$review-arrow-hover-border-color: #2c3e50 !default;
-$review-arrow-hover-background: #2c3e50 !default;
+$review-arrow-hover-border-color: transparent !default;
+$review-arrow-hover-background: transparent !default;
 $review-prev: '\00ab'; // &laquo;
 $review-next: '\00bb'; // &raquo;
 
@@ -35,6 +35,16 @@ $review-next: '\00bb'; // &raquo;
 
     &-item {
         margin-bottom: 30px;
+
+        .review-date,
+        .review-author,
+        .review-content 
+        {
+            &,
+            p {
+                color: #000;
+            }
+        }
     }
 
     &-client {
@@ -47,12 +57,14 @@ $review-next: '\00bb'; // &raquo;
     &-title {
         font-weight: $review-title-font-weight;
         text-transform: $review-title-text-transform;
+        font-family: "ProxmaBlackItalic";
     }
 
     &-avatar {
         display: block;
         margin: 0 auto;
         border-radius: 50%;
+        max-width: 100px;
     }
 
     &-social {
@@ -87,11 +99,13 @@ $review-next: '\00bb'; // &raquo;
     }
 
     &-content {
+        max-width: 640px;
+        margin: 10px auto;
         &,
         p {
             color: $review-content-color;
             font-size: $review-content-font-size;
-            line-height: 1.5;
+            line-height: 150%;
         }
     }
 
@@ -106,8 +120,17 @@ $review-next: '\00bb'; // &raquo;
         margin: 20px 0;
 
         .review-item {
-
+            .review-date,
+            .review-author,
+            .review-content 
+            {
+                &,
+                p {
+                    color: #fff;
+                }
+            }
         }
+
 
         .slick {
             &-list {
@@ -120,7 +143,7 @@ $review-next: '\00bb'; // &raquo;
                 top: 50%;
                 z-index: 10;
                 margin-top: -($review-arrow-size / 2);
-                border: $review-arrow-border-width solid $review-arrow-border-color;
+                border: 0;
                 padding: 0;
                 width: $review-arrow-size;
                 height: $review-arrow-size;
@@ -130,7 +153,7 @@ $review-next: '\00bb'; // &raquo;
                 line-height: 1;
                 text-align: center;
                 border-radius: $review-arrow-radius;
-                background-color: $review-arrow-background;
+                background: none;
                 @extend %smooth_animation;
 
                 &:focus {
@@ -140,7 +163,7 @@ $review-next: '\00bb'; // &raquo;
                 &:hover {
                     color: $review-arrow-hover-color;
                     border-color: $review-arrow-hover-border-color;
-                    background-color: $review-arrow-hover-background;
+                    background-color: transparent;
                 }
             }
 
@@ -158,6 +181,31 @@ $review-next: '\00bb'; // &raquo;
                 //&::before {
                 //    content: $review-next;
                 //}
+            }
+
+            &-dots {
+                margin: 0;
+                padding: 0;
+                li {
+                    list-style: none;
+                    display: inline-block;
+
+                    &.slick-active {
+                        button {
+                            background-color: $themeColorThree;
+                        }
+                    }
+
+                    button {
+                        background-color: transparent;
+                        border: 0;
+                        width: 35px;
+                        height: 3px;
+                        background: $themeColorFive;
+                        font-size: 0px;
+                        margin: 0 5px;
+                    }
+                }
             }
         }
     }

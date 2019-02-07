@@ -4,6 +4,8 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-8">
+        <?php if (!is_front_page() && function_exists('kama_breadcrumbs')) kama_breadcrumbs(' » '); ?>
+        
         <h1 class="text-center"><?php post_type_archive_title(); ?></h1>
 
         <div class="sp-xs-2 sp-md-3"></div>

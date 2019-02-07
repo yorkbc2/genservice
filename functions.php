@@ -5,6 +5,9 @@
 
 //show_admin_bar(false);
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 require get_template_directory() . '/inc/helpers.php';
 require get_template_directory() . '/inc/auth.php';
 require get_template_directory() . '/inc/admin.php';
@@ -26,3 +29,4 @@ require get_template_directory() . '/inc/meta-boxes.php';
 require get_template_directory() . '/inc/custom-post-types.php';
 
 require get_template_directory() . '/inc/LoadMorePosts.php';
+require get_template_directory() . '/inc/rest.php';

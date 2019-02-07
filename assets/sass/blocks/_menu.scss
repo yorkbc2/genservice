@@ -1,10 +1,20 @@
+.nav-container {
+    border-top: 1px solid #e7e7e7;
+    padding: 15px 0;
+}
+
 .nav {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     position: relative;
-    margin: 10px 15px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
-    border-radius: 4px;
-    text-align: center;
+
+    .nav-switcher {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .menu {
         &,
@@ -14,12 +24,35 @@
         }
 
         &-item {
+            position: relative;
             display: inline-block;
             vertical-align: middle;
-            padding: 5px;
+            margin: 8px 10px;
+
+            &:first-child {
+                margin-left: 0px;
+            }
 
             .menu-item-has-children-arrow {
                 display: none;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: -5px;
+                opacity: 0;
+                left: 0;
+                background: $themeColorThree;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
             }
 
             &-close {
@@ -64,20 +97,20 @@
             &-has-children {
                 position: relative;
                 
-                &:hover {
-                    &::after {
+                // &:hover {
+                //     &::after {
                         
-                    }
-                }
+                //     }
+                // }
                 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 21px;
-                    right: 1px;
-                    border: 5px solid #000;
-                    border-color: #000 transparent transparent transparent;
-                }
+                // &::after {
+                //     content: "";
+                //     position: absolute;
+                //     top: 21px;
+                //     right: 1px;
+                //     border: 5px solid #000;
+                //     border-color: #000 transparent transparent transparent;
+                // }
             }
 
             .no-touch &:hover,
@@ -100,13 +133,16 @@
 
         &-link {
             display: block;
-            padding: 8px 10px;
-            color: #000;
-            font-size: 16px;
+            color: #353535;
+            font-size: 14px;
             line-height: 1.3;
             text-align: center;
-            text-transform: none;
+            font-weight: bolder;
+            text-transform: uppercase;
             text-decoration: none;
+            &:hover {
+                color: #000;
+            }
             @extend %smooth_animation;
         }
     }
@@ -133,21 +169,21 @@
             &-has-children {
                 position: relative;
                 
-                &:hover {
-                    &::after {
-                        border-left-color: #fff;
-                    }
-                }
+                // &:hover {
+                //     &::after {
+                //         border-left-color: #fff;
+                //     }
+                // }
                 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 12px;
-                    right: 5px;
-                    border: 5px solid #000;
-                    border-color: transparent transparent transparent #000;
-                    transition: border-color .3s ease-in-out;
-                }
+                // &::after {
+                //     content: "";
+                //     position: absolute;
+                //     top: 12px;
+                //     right: 5px;
+                //     border: 5px solid #000;
+                //     border-color: transparent transparent transparent #000;
+                //     transition: border-color .3s ease-in-out;
+                // }
             }
 
             .no-touch &:hover,
@@ -257,7 +293,13 @@
 
         &::after {
             top: 0;
-            transform: rotate(-45deg);
+            transform: rotate(-45deg); 
         }
+    }
+}
+
+.wrapper--paged {
+    .nav-container {
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
     }
 }

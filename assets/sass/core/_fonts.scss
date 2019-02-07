@@ -1,9 +1,24 @@
 //@import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster&subset=cyrillic');
 
+@font-face {
+	src: url("assets/fonts/ProximaBold.ttf");
+	font-family: "ProximaBold";
+}
+
+@font-face {
+	src: url("assets/fonts/ProximaRegular.ttf");
+	font-family: "ProximaRegular";
+}
+
+@font-face {
+	src: url("assets/fonts/ProxmaBlackItalic.ttf");
+	font-family: "ProxmaBlackItalic";
+}
+
 //font-family: 'Roboto', sans-serif;
 $font-family-sans-serif: "Arial", "Helvetica", sans-serif;
 $font-family-serif: "Georgia", "Times New Roman", "Times", serif;
 $font-family-monospace: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
 
-$fontFamilyOne: $font-family-sans-serif; //titles
-$fontFamilyTwo: $font-family-sans-serif; //body
+$fontFamilyOne: "ProximaBold"; //titles
+$fontFamilyTwo: "ProximaRegular"; //body

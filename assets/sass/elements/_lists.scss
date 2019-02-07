@@ -2,3 +2,120 @@ ul,
 ol {
     padding-left: 20px;
 }
+
+
+ul {
+	&.social-list {
+		li {
+			display: inline-block;
+			list-style: none;
+
+			padding: 0 5px;
+
+			a {
+				i {
+					font-size: 22px;
+					opacity: 0.7;
+					color: $themeColorTwo;
+					transition: opacity 0.3s ease-in-out;
+					&:hover {
+						opacity: 1;
+					}
+
+					&.fa-instagram {
+						color: #e4405f;
+					}
+
+					&.fa-facebook,
+					&.fa-facebook-f {
+						color: #3b5999;
+					}
+				}
+			}
+		}
+	}
+}
+
+.phone-list-drop {
+	position: relative;
+
+	margin: 0 20px;
+
+	&:hover {
+		.phone-list-dropdown {
+			opacity: 1;
+			top: 105%;
+		}
+	}
+
+	.phone-list-dropdown {
+		position: absolute;
+		display: block;
+		z-index: 10;
+		background-color: #fff;
+
+		top: -999px;
+		opacity: 0;
+
+		width: 100%;
+		height: auto;
+		border-radius: 0px 0px 5px 5px;
+		border: 0px;
+		box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.15);
+
+		margin: 0;
+		padding: 0;
+
+		transition: opacity 0.5s ease-in-out; 
+
+		li {
+			display: block;
+			list-style: none;
+			text-align: left;
+	
+			a {
+				display: block;
+				padding: 10px;
+				border-bottom: 1px solid #e7e7e7;
+			}
+
+			&:last-child {
+				a {
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+
+	a {
+		font-size: 18px;
+	}
+}
+
+.lang-list {
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style: none;
+		margin: 0;
+		&.current-lang {
+			a {
+				font-weight: bolder;
+			}
+		}
+
+
+		a::after {
+			content: "/";
+			font-weight: bolder;
+			display: inline;
+			padding-left: 5px;
+		}
+		&:last-child {
+			a::after {
+				display: none;
+			}
+		}
+	}
+}
