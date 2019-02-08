@@ -28,6 +28,9 @@
             ';
             $items = '';
             foreach ($fields as $field) {
+                foreach ($field as $j => $field_value) {
+                    $field[$j] = filter_var($field_value, FILTER_SANITIZE_STRING);
+                }
                 $items .= '<i>'.$field['placeholder'].':</i> <b>' . $field['value'] . '</b>';
             }
             $content = sprintf($content, $items);

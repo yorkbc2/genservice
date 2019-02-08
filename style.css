@@ -8571,14 +8571,17 @@ a:hover .fa {
   text-transform: uppercase;
   max-width: 72%;
   font-weight: bold; }
-  @media screen and (max-width: 872px) {
+  @media screen and (max-width: 1024px) {
     .header {
       max-width: 100%; } }
   .header.header--big {
-    font-size: 82px; }
-    @media screen and (max-width: 872px) {
+    font-size: 72px; }
+    @media screen and (max-width: 1024px) {
       .header.header--big {
         font-size: 64px; } }
+    @media screen and (max-width: 678px) {
+      .header.header--big {
+        font-size: 36px; } }
   .header.header--intro {
     font-size: 72px;
     color: #fff;
@@ -8613,6 +8616,9 @@ a:hover .fa {
     -ms-flex-pack: center;
     justify-content: center;
     height: inherit; }
+  @media screen and (max-width: 1024px) {
+    .section {
+      margin: 20px 0; } }
 
 .blog-item {
   position: relative;
@@ -8777,14 +8783,17 @@ a:hover .fa {
         width: 100%;
         text-align: center; } }
 
-.product-slide .product-slide-header {
-  font-size: 72px; }
-
 .product-slide .product-slide-content h3 {
   font-size: 36px;
   font-weight: bolder;
   margin: 25px 0;
   font-family: "ProxmaBlackItalic"; }
+  @media screen and (max-width: 1024px) {
+    .product-slide .product-slide-content h3 {
+      font-size: 32px; } }
+  @media screen and (max-width: 678px) {
+    .product-slide .product-slide-content h3 {
+      font-size: 18px; } }
 
 .product-slide .product-slide-content p {
   font-size: 18px;

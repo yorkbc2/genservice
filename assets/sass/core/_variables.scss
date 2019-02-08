@@ -144,3 +144,6 @@ $infoIconFontColor: #1e85be;
 // message
 $messageBorderTopColor: $themeColorTwo;
 $messageIconFontColor: $themeColorTwo;
+
+$mediaQueryMobile: 'screen and (max-width: 678px)';
+$mediaQueryTablet: 'screen and (max-width: 1024px)';

@@ -139,11 +139,11 @@
 					<?php echo esc_html(get_post_meta(get_the_ID(), "second_screen_text", true)); ?>
 				</h3>
 			</div>
-			<div class="sp-md-10 sp-sm-10 sp-xs-10"></div>
+			<div class="sp-md-10 "></div>
 		</section>
 
 		<section>
-			<div class="sp-md-8 sp-sm-8 sp-xs-8"></div>
+			<div class="sp-md-8 sp-sm-4 sp-xs-4"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
@@ -203,7 +203,7 @@
 		</section>
 
 		<section>
-			<div class="sp-md-10 sp-sm-10 sp-xs-10"></div>
+			<div class="sp-md-10"></div>
 			<?php
 				$posts = get_last_posts();
 				if (sizeof($posts) > 0):
