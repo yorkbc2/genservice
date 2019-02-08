@@ -98,11 +98,12 @@ body {
     color: $bodyFontColor;
     font-family: $fontFamilyTwo;
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 .wrapper {
     position: relative;
-    overflow-x: hidden;
+    overflow-x: hidden!important;
     min-height: 100%;
 
     @media #{$mobile} {

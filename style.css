@@ -9545,11 +9545,12 @@ body {
   background-color: #fff;
   color: #000;
   font-family: "ProximaRegular";
-  font-weight: 400; }
+  font-weight: 400;
+  overflow-x: hidden; }
 
 .wrapper {
   position: relative;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   min-height: 100%; }
   @media (max-width: 544px) {
     .wrapper {
