@@ -14,7 +14,7 @@
     <div class="footer-container">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="col-md-4 col-sm-12 col-xs-12">
                     <form action="<?php echo get_site_url(); ?>/wp-json/api/contact" class="default-form">
                         <div>
                             <input type="text" name="name" class="default-form-input" placeholder="<?php _e("Ваше имя", "brainworks"); ?>">
@@ -29,7 +29,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="col-md-8 col-sm-12 col-xs-12">
                     <div class="flex-row footer-block">
                         <div class="flex-col">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d342335.213267162!2d33.086335894662646!3d47.90748106298786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dadfe03154ab7b%3A0xb0fa3a177d6b186e!2sKryvyi+Rih%2C+Dnipropetrovsk+Oblast%2C+50000!5e0!3m2!1sen!2sua!4v1549308677246" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
