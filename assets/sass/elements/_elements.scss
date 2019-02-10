@@ -468,3 +468,20 @@
 		}
 	}
 }
+
+.pointer {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: $themeColorThree;
+	border-radius: 50%;
+	pointer-events: none;
+	opacity: 0.9;
+	z-index: 999;
+	transition: all 0.1s linear;
+
+	@media #{$tablet} {
+		display: none;
+	}
+}

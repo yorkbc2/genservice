@@ -17,7 +17,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
+<div class="pointer" id="pointer"></div>
 <div class="wrapper">
 	<header class="page-header">
         <div class="container page-header-container">

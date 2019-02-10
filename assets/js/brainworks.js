@@ -19,10 +19,12 @@
         if (ajax) {
             ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
         }
+        scrollHandlerForButton(".nav a");
         stickFooter(".js-footer", ".js-container");
         anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
         buyOneClick(".one-click", '[data-field-id="field7"]', "h1.page-name");
         handleForm(".default-form");
+        setPointer("#pointer");
         d.on("copy", addLink);
         w.on("resize", function() {
             if (w.innerWidth >= 630) {
@@ -81,6 +83,25 @@
                 speed: 300,
                 swipe: true,
                 zIndex: 10
+            });
+        }
+    };
+    var scrollHandlerForButton = function scrollHandlerForButton(elements) {
+        elements = $(elements);
+        if (elements.length) {
+            elements.each(function(index, element) {
+                var attr = element.getAttribute("href");
+                if (attr && (attr[0] === "#" || attr[1] === "#")) {
+                    if (attr[0] === "/") attr = attr.slice(1);
+                    console.log(attr);
+                    element.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        var el = $(attr);
+                        if (el.length) $("html, body").animate({
+                            scrollTop: el.offset().top
+                        }, 500);
+                    });
+                }
             });
         }
     };
@@ -272,6 +293,27 @@
                     }
                 });
             }
+        });
+    };
+    var setPointer = function setPointer(selector) {
+        var pointer = $(selector);
+        if (!pointer.length) return;
+        $("body").mousemove(function(e) {
+            pointer.css({
+                left: e.pageX - 10 + "px",
+                top: e.pageY - 40 + "px"
+            });
+        });
+        $("a, img, button").mouseover(function(e) {
+            pointer.css({
+                transform: "scale(5)",
+                opacity: .5
+            });
+        }).mouseout(function(e) {
+            pointer.css({
+                transform: "scale(1)",
+                opacity: 1
+            });
         });
     };
 })(window, document, jQuery, window.jpAjax);

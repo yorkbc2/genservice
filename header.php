@@ -14,6 +14,7 @@
 </head>
 <body <?php body_class(); ?> id="top">
 
+<div class="pointer" id="pointer"></div>
 <?php wp_body(); ?>
 
 <div class="wrapper wrapper--paged">

@@ -26,11 +26,13 @@
     if (ajax) {
       ajaxLoadMorePosts(".js-load-more", ".js-ajax-posts");
     }
+    scrollHandlerForButton(".nav a");
     stickFooter(".js-footer", ".js-container");
     // hamburgerMenu('.js-menu', '.js-hamburger', '.js-menu-close');
     anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
     buyOneClick(".one-click", '[data-field-id="field7"]', "h1.page-name");
     handleForm(".default-form");
+    setPointer("#pointer");
     // On Copy
     d.on("copy", addLink);
 
@@ -193,26 +195,46 @@
    * @param {(string|Object)} elements Elements to add to handler
    * @returns {void}
    */
-  /*const scrollHandlerForButton = (elements) => {
-        elements = $(elements);
-
-        let i, el;
-
-        for (i = 0; i < elements.length; i++) {
-
-            el = elements.eq(i);
-
-            el.on('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-
-                scrollToElement($(e.target.hash), () => {
-                    document.location.hash = e.target.hash;
-                });
-            });
-
+  const scrollHandlerForButton = elements => {
+    elements = $(elements);
+    if (elements.length) {
+      elements.each((index, element) => {
+        let attr = element.getAttribute("href");
+        if (attr && (attr[0] === "#" || attr[1] === "#")) {
+          if (attr[0] === "/") attr = attr.slice(1);
+          console.log(attr);
+          element.addEventListener("click", e => {
+            e.preventDefault();
+            let el = $(attr);
+            if (el.length)
+              $("html, body").animate(
+                {
+                  scrollTop: el.offset().top
+                },
+                500
+              );
+          });
         }
-    };*/
+      });
+    }
+
+    // let i, el;
+
+    // for (i = 0; i < elements.length; i++) {
+
+    //     el = elements.eq(i);
+
+    //     el.on('click', (e) => {
+    //         e.preventDefault();
+    //         e.stopPropagation();
+
+    //         scrollToElement($(e.target.hash), () => {
+    //             document.location.hash = e.target.hash;
+    //         });
+    //     });
+
+    // }
+  };
 
   /**
    * Another Hamburger Menu
@@ -523,8 +545,8 @@
   };
 
   const handleForm = selector => {
-    $(selector).on('submit', (e) => {
-        e.preventDefault();
+    $(selector).on("submit", e => {
+      e.preventDefault();
       const $form = $(e.target),
         action = $form.attr("action"),
         method = $form.attr("method") || "POST",
@@ -542,26 +564,56 @@
           element.classList.add("_error");
           error.set(true);
         } else {
-            data.push({
-                value: element.value,
-                placeholder: element.placeholder
-            });
+          data.push({
+            value: element.value,
+            placeholder: element.placeholder
+          });
         }
       });
       if (!error.value) {
-        $form.find("button[type=submit]").attr('disabled');
+        $form.find("button[type=submit]").attr("disabled");
         $.ajax({
-            url: action,
-            dataType: 'json',
-            contentType: "application/json",
-            data: JSON.stringify({fields: data}),
-            method,
-            cache: false,
-            success: (response) => {
-                $form.html(`<h4 class="header header--white form-default-response">${response.Data.text}</h4>`);
-            }
-        })
+          url: action,
+          dataType: "json",
+          contentType: "application/json",
+          data: JSON.stringify({ fields: data }),
+          method,
+          cache: false,
+          success: response => {
+            $form.html(
+              `<h4 class="header header--white form-default-response">${
+                response.Data.text
+              }</h4>`
+            );
+          }
+        });
       }
     });
+  };
+
+  const setPointer = selector => {
+    const pointer = $(selector);
+    if (!pointer.length) return;
+
+    $("body").mousemove(e => {
+      pointer.css({
+        left: e.pageX - 10 + "px",
+        top: e.pageY - 40 + "px"
+      });
+    });
+
+    $("a, img, button")
+      .mouseover(e => {
+        pointer.css({
+          transform: "scale(5)",
+          opacity: 0.5
+        });
+      })
+      .mouseout(e => {
+        pointer.css({
+          transform: "scale(1)",
+          opacity: 1
+        });
+      });
   };
 })(window, document, jQuery, window.jpAjax);

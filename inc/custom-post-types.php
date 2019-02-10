@@ -44,12 +44,12 @@ function bw_register_slider_items()
      * Post Type: Reviews.
      */
     $labels = array(
-        'name' => __('Слайды', 'brainworks'),
-        'singular_name' => __('Слайд', 'brainworks'),
+        'name' => __('Продукция', 'brainworks'),
+        'singular_name' => __('Продукция', 'brainworks'),
     );
 
     $args = array(
-        'label' => __('Слайды', 'brainworks'),
+        'label' => __('Продукция', 'brainworks'),
         'labels' => $labels,
         'description' => '',
         'public' => true,

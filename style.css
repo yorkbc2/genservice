@@ -8929,6 +8929,23 @@ a:hover .fa {
     .custom-jumbotron .custom-jumbotron-col:last-child::after {
       display: none; }
 
+.pointer {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #df0000;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 999;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+  @media (min-width: 545px) and (max-width: 768px) {
+    .pointer {
+      display: none; } }
+
 .pre-header {
   padding: 5px 0;
   background-color: #df0000;
@@ -9497,7 +9514,7 @@ a:hover .fa {
   .copyright a {
     color: #df0000; }
     .copyright a:hover {
-      color: #f2f2f2; }
+      color: #000; }
 
 .footer-container {
   padding: 60px;
