@@ -570,3 +570,11 @@ if (!function_exists('get_slide_items')) {
         return $posts;
     }
 }
+
+if (!function_exists('ml_class')) {
+    function ml_class($className = "") {
+        $className = sprintf($className . '-%s', 
+            pll_current_language());
+        return $className;
+    }
+}

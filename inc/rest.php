@@ -31,7 +31,7 @@
                 foreach ($field as $j => $field_value) {
                     $field[$j] = filter_var($field_value, FILTER_SANITIZE_STRING);
                 }
-                $items .= '<i>'.$field['placeholder'].':</i> <b>' . $field['value'] . '</b>';
+                $items .= '<i>'.$field['placeholder'].':</i> <b>' . $field['value'] . '</b><br/>';
             }
             $content = sprintf($content, $items);
             if (wp_mail(get_option('admin_email'), 'Контактная форма', $content, array('Content-Type: text/html; charset=UTF-8'))) {

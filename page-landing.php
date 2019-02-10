@@ -67,7 +67,7 @@
                         </div> 
                     <?php endif; ?>
                     <div class="page-header-row-column">
-                        <button type="button" class="button button-large page-header-callback">
+                        <button type="button" class="button button-large <?php echo ml_class('page-header-callback') ?>">
                             <?php _e("Обратный звонок", "brainworks"); ?>
                         </button>
                     </div>
@@ -112,7 +112,7 @@
 
 		<!-- SECTIONS -->
 
-		<section class="section section--full">
+		<section class="section section--full" id="section-intro">
 			<?php _layerslider(1); ?>
 		</section>
 
@@ -132,7 +132,7 @@
 			</div>
 		</section> -->
 
-		<section>
+		<section id="section-about">
 			<div class="sp-md-10 sp-sm-10 sp-xs-10"></div>
 			<div class="container">
 				<h3 class="header header--quote">
@@ -142,7 +142,7 @@
 			<div class="sp-md-10 "></div>
 		</section>
 
-		<section>
+		<section id="section-subabout">
 			<div class="sp-md-8 sp-sm-4 sp-xs-4"></div>
 			<div class="container">
 				<div class="row">
@@ -159,7 +159,7 @@
 			<div class="sp-md-8 sp-sm-8 sp-xs-8"></div>
 		</section>
 
-		<section>
+		<section id="section-adv">
 			<div class="sp-md-8 sp-sm-8 sp-xs-8"></div>
 			<div class="container">
 				<div class="custom-jumbotron">
@@ -180,12 +180,12 @@
 			<div class="sp-md-8 sp-sm-8 sp-xs-8"></div>
 		</section>
 
-		<section>
+		<section id="section-products">
 			<div class="container">
 				<?php echo do_shortcode('[bw-products-slider]'); ?>
 			</div>
 		</section>
-		<section class="section section--with-background text-center" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/img/reviews.jpg');">
+		<section class="section section--with-background text-center" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/img/reviews.jpg');" id="section-reviews">
 			<div class="container">
 				<div class="sp-md-10 sp-sm-10 sp-xs-10"></div>
 				<h2 class="header header--big">
@@ -194,7 +194,7 @@
 				<div class="sp-md-5 sp-sm-5 sp-xs-5"></div>
 				<?php echo do_shortcode('[bw-reviews]'); ?>
 				<div class="text-center">
-					<button type="button" class="button-large">
+					<button type="button" class="button-large <?php echo ml_class('reviews-callback'); ?>">
 						<?php _e("Оставить отзыв", "brainworks"); ?>
 					</button>
 				</div>
@@ -202,7 +202,7 @@
 			</div>
 		</section>
 
-		<section>
+		<section id="section-blog">
 			<div class="sp-md-10"></div>
 			<?php
 				$posts = get_last_posts();
@@ -295,7 +295,7 @@
 	                            <input type="tel" name="phone" class="default-form-input" placeholder="<?php _e("Телефон", "brainworks"); ?>">
 	                        </div>
 	                        <div>
-	                            <button type="submit" class="button-large button-reversed button-block footer-callback">
+	                            <button type="submit" class="button-large button-reversed button-block <?php echo ml_class('footer-callback'); ?>">
 	                                <?php _e("Заказать звонок", "brainworks"); ?>
 	                            </button>
 	                        </div>

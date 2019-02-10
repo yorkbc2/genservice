@@ -66,7 +66,7 @@
                         </div> 
                     <?php endif; ?>
                     <div class="page-header-row-column">
-                        <button type="button" class="button button-large page-header-callback">
+                        <button type="button" class="button button-large <?php echo ml_class('page-header-callback') ?>">
                             <?php _e("Обратный звонок", "brainworks"); ?>
                         </button>
                     </div>

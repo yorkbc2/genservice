@@ -613,10 +613,10 @@ if (!function_exists('bw_products_slider')) {
                         <div class="sp-md-4 sp-sm-4 sp-xs-4"></div>
                         <div class="text-left">
                             <button class="button iconed-button">
-                                <i class="fal fa-plus iconed-button-icon show-spec-%3$s"></i>
+                                <i class="fal fa-plus iconed-button-icon '.ml_class('show-spec') . '-%3$s'.'"></i>
                                 <span>'.__("Спецификация", "brainworks").'</span>
                             </button>
-                            <button class="button-large show-price-%s">' . __("Узнать цену", "brainworks") . '</button>
+                            <button class="button-large '.ml_class('show-price') . '-%s' .'">' . __("Узнать цену", "brainworks") . '</button>
                         </div>
                         <div class="sp-md-4 sp-sm-4 sp-xs-4"></div>
                     </div>

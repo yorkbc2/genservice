@@ -18,12 +18,12 @@
                     <form action="<?php echo get_site_url(); ?>/wp-json/api/contact" class="default-form">
                         <div>
                             <input type="text" name="name" class="default-form-input" placeholder="<?php _e("Ваше имя", "brainworks"); ?>">
-                        </div>
+                        </div> 
                         <div>
                             <input type="tel" name="phone" class="default-form-input" placeholder="<?php _e("Телефон", "brainworks"); ?>">
                         </div>
                         <div>
-                            <button type="submit" class="button-large button-reversed button-block footer-callback">
+                            <button type="submit" class="button-large button-reversed button-block <?php echo ml_class('footer-callback'); ?>">
                                 <?php _e("Заказать звонок", "brainworks"); ?>
                             </button>
                         </div>
