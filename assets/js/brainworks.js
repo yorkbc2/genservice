@@ -301,7 +301,7 @@
         $("body").mousemove(function(e) {
             pointer.css({
                 left: e.pageX - 10 + "px",
-                top: e.pageY - 40 + "px"
+                top: e.pageY + "px"
             });
         });
         $("a, img, button").mouseover(function(e) {
