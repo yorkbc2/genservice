@@ -356,6 +356,7 @@
 	</footer>
 </div>
 
+<?php scroll_top(); ?>
 
 
 <?php wp_footer(); ?>
