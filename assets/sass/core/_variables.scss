@@ -86,14 +86,14 @@ $buttonOutlinedFirstColor: $themeColorTwo;
 $buttonOutlinedSecondColor: #fff;
 
 // TABLE
-$tableBgColor: $themeColorTwo;
-$tableBgColorActive: lighten($themeColorTwo, 10%);
-$tableBorderColor: #fff;
+$tableBgColor: #fff;
+$tableBgColorActive: lighten($themeColorOne, 60%);
+$tableBorderColor: #868686;
 $tableBorderColorActive: #989898;
-$tableOddBgColor: $themeColorOne;
-$tableOddFontColor: #fff;
-$tableEvenBgColor: $themeColorTwo;
-$tableEvenFontColor: #fff;
+$tableOddBgColor: #b9b9b9;
+$tableOddFontColor: #000000;
+$tableEvenBgColor: #fff;
+$tableEvenFontColor: $themeColorOne;
 
 // TEXT
 $textMutedColor: #aaa;

@@ -3,13 +3,14 @@ table {
     //border-spacing: 2px;
     //background-color: $tableBgColor;
     width: 100%;
-    text-align: center;
+    //text-align: center;
 }
 
 tr > th:first-child,
 tr > td:first-child {
-    font-weight: 600;
+    //font-weight: 600;
     text-align: left;
+    vertical-align: middle;
 }
 
 tbody > tr:first-child th {
@@ -20,41 +21,3 @@ table, thead, tfoot, tbody, tr, th, td {
     border: 1px solid $tableBorderColor;
     padding: 5px;
 }
-
-// Widget Calendar
-//table#wp-calendar {
-//    text-align: center;
-//
-//    caption {
-//        color: $themeColorTwo;
-//    }
-//
-//    thead {
-//        tr {
-//            th {
-//
-//            }
-//        }
-//    }
-//
-//    tfoot {
-//        tr {
-//            td {
-//
-//            }
-//        }
-//    }
-//
-//    tbody {
-//        tr {
-//            td {
-//
-//            }
-//
-//            td#today {
-//                background-color: $themeColorTwo;
-//                color: $themeColorOne;
-//            }
-//        }
-//    }
-//}
