@@ -116,34 +116,17 @@
 			<?php _layerslider(1); ?>
 		</section>
 
-		<!-- <section class="section section--full section--with-background" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/img/header.jpg');">
-			<div class="section-content container">
-				<h1 class="header header--intro">
-					ЗАЩИТА <br />
-					ВОЗДУШНОГО <br />
-					ПРОСТРАНСТВА<br />
-					ОТ БЕСПИЛОТНИКОВ<br />
-				</h1>
-				<div class="text-left">
-					<a href="#" class="button-large">
-						Узнать больше
-					</a>
-				</div>
-			</div>
-		</section> -->
-
 		<section id="section-about">
-			<div class="sp-md-10 sp-sm-10 sp-xs-10"></div>
+			<div class="sp-xs-10 sp-sm-10 sp-md-7 sp-lg-7 sp-xl-5"></div>
 			<div class="container">
 				<h3 class="header header--quote">
 					<?php echo esc_html(get_post_meta(get_the_ID(), "second_screen_text", true)); ?>
 				</h3>
 			</div>
-			<div class="sp-md-10 "></div>
+			<div class="sp-xs-4sp-sm-4 sp-md-7 sp-lg-5 sp-xl-5"></div>
 		</section>
 
 		<section id="section-subabout">
-			<div class="sp-md-8 sp-sm-4 sp-xs-4"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
@@ -156,7 +139,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="sp-md-8 sp-sm-8 sp-xs-8"></div>
+			<div class="sp-md-5"></div>
 		</section>
 
 		<section id="section-adv">
@@ -203,7 +186,7 @@
 		</section>
 
 		<section id="section-blog">
-			<div class="sp-md-10"></div>
+			<div class="sp-md-5"></div>
 			<?php
 				$posts = get_last_posts();
 				if (sizeof($posts) > 0):
